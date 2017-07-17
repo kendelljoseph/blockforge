@@ -1,0 +1,40 @@
+{
+  "name": "blockforge",
+  "version": "1.0.0",
+  "description": "A lego block programming language",
+  "main": "run-server.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber.js",
+    "start": "node run-server.js"
+  },
+  "directories": {
+    "test": "features"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altereagle/blockforge.git"
+  },
+  "keywords": [
+    "lego",
+    "programming"
+  ],
+  "author": "Kendell Joseph",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/altereagle/blockforge/issues"
+  },
+  "homepage": "https://github.com/altereagle/blockforge#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "colors": "^1.1.2",
+    "cucumber": "^2.3.1",
+    "express": "^4.15.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.4.2"
+  }
+}

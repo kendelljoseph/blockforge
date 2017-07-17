@@ -1,0 +1,20 @@
+engines:
+  fixme:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  nodesecurity:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        javascript:
+          mass_threshold: 100
+    
+    
+ratings:
+  paths:
+  - "**.js"

@@ -1,5 +1,6 @@
 module.exports = {
   options: {
-    name: `Blockforge Test`
+    serverName  : `Blockforge Test`,
+    clientFolder: `${process.cwd()}/demos/`
   }
 };

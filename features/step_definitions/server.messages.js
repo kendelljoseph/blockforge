@@ -10,13 +10,13 @@ const {defineSupportCode: cucumber} = require(`cucumber`);
 // Request Actions
 // ---------------
 cucumber(({Given, When, Then}) => {
-  Given(/^the server has dependencies$/, function(done){
-    this.dependencies.should.be.an.object;
+  Given(/^the server has messages$/, function(done){
+    this.serverMessages.should.be.an.object;
     done();
   });
   
-  Given(/^the (.*) dependency is installed$/, function(name, done){
-    this.dependencies[name].should.exist;
+  Given(/^the server should have \ban?\b (.*) message$/, function(name, done){
+    this.serverMessages[name].should.exist;
     done();
   });
 });

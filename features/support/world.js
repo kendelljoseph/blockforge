@@ -10,18 +10,22 @@ cucumber(({setWorldConstructor}) => {
   setWorldConstructor(function(){
     // General Data Storage
     // --------------------
-    this.data         = {};
+    this.data           = {};
     
     // Dependencies
     // ------------
-    this.dependencies = require(`${directory}/server_dependencies`);
+    this.dependencies   = require(`${directory}/server_dependencies`);
     
     // Server
     // ------
-    this.server       = require(`${directory}/server`);
+    this.server         = require(`${directory}/server`);
     
     // Server Data
     // -----------
-    this.serverData   = require(`${directory}/features/data/server`);
+    this.serverData     = require(`${directory}/features/data/server`);
+    
+    // Server Messages
+    // ---------------
+    this.serverMessages = require(`${directory}/server_messages`);
   });
 });

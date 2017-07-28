@@ -9,6 +9,8 @@ module.exports = {
   colors    : require(`colors`),
   express   : require(`express`),
   bodyParser: require(`body-parser`),
+  morgan    : require(`morgan`),
+  http      : require(`http`),
   _         : require(`underscore`),
   cucumber  : require(`cucumber`)
 };

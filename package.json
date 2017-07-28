@@ -2,10 +2,10 @@
   "name": "blockforge",
   "version": "1.0.0",
   "description": "A lego block programming language",
-  "main": "run-server.js",
+  "main": "run_server.js",
   "scripts": {
     "test": "./node_modules/.bin/cucumber.js",
-    "start": "node run-server.js"
+    "start": "node run_server.js"
   },
   "directories": {
     "test": "features"
@@ -29,6 +29,7 @@
     "colors": "^1.1.2",
     "cucumber": "^2.3.1",
     "express": "^4.15.3",
+    "morgan": "^1.8.2",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

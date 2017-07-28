@@ -36,7 +36,7 @@ A lego block programming language. Seriously.
 
 | role | skill | tools | description |
 | --- | --- | --- | --- |
-| Project Manager | organization | [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2078579) | Plan, organize, and keep tabs on the different tasks and goals required to keep the project moving forward. This requires frequent contact with other team members and developers and coming up with meaningful, valuable contributions. Open mindedness meets frugality in a playful balance in the individual that this role suits! |
+| Project Manager | organization | [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2078579) | Plan, organize, and keep tabs on the different tasks and goals required to keep the project moving forward. This requires frequent contact with other team members and coming up with meaningful, valuable contributions. Open mindedness meets frugality in a playful balance in the individual that this role suits! |
 | Experience Designer | design | [Github Project](https://github.com/altereagle/blockforge/projects) | Creatively think about and guide feature designs from a user centric perspective. Putting yourself inside the mind of the user would be a critical component of this individual's thought process. |
 | Developer | coding | [Cloud 9(IDE)](https://ide.c9.io/kendelljoseph/blockforge) | Translate ideas into concrete structures. A good developer can churn code, a great developer can communicate effectively. Knowing that speed and recall aren't as imperative to success as clarity is a steadfast mantra for any individual who embraces the development heartbeat of a project. |
 

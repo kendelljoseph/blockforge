@@ -8,4 +8,5 @@ Feature: Server dependencies and functionality
       And the morgan dependency is installed
       And the _ dependency is installed
       And the cucumber dependency is installed
+      And the chai dependency is installed
     Then the server should run

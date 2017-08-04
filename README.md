@@ -1,6 +1,8 @@
 # Blockforge
-A lego block programming language. Seriously.
 
+[![Code Climate](https://codeclimate.com/repos/59842ad4f9f0ea028a0016d3/badges/59842ad4f9f0ea028a0016d3/gpa.svg)](https://codeclimate.com/github/altereagle/blockforge)
+
+A lego block programming language. Seriously.
 ![lego](http://cdn.wallpapersafari.com/43/69/qlCby6.jpg)
 
 ## How it works

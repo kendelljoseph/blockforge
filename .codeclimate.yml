@@ -6,7 +6,7 @@ engines:
   csslint:
     enabled: true
   nodesecurity:
-    enabled: true
+    enabled: false
   duplication:
     enabled: true
     config:

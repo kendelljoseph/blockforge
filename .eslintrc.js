@@ -16,7 +16,7 @@ module.exports = {
     ],
     "quotes": [
       2,
-      "double"
+      "backtick"
     ],
     "semi": [
       2,

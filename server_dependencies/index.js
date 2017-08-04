@@ -12,5 +12,6 @@ module.exports = {
   morgan    : require(`morgan`),
   http      : require(`http`),
   _         : require(`underscore`),
-  cucumber  : require(`cucumber`)
+  cucumber  : require(`cucumber`),
+  chai      : require(`chai`)
 };

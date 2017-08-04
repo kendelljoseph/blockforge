@@ -6,7 +6,7 @@ A lego block programming language. Seriously.
 ## How it works
 - Using a combination of a **webcam** and a number of groovy open source libraries.
 
-## Live Development
+## Development
 - This project is being developed entirely open sourced.  Development is taking place in real time and is **completely open for public observation, commenting, and consumption**.
 
 | Resource | Purpose | Description |
@@ -14,6 +14,8 @@ A lego block programming language. Seriously.
 |**[App](https://blockforge-kendelljoseph.c9users.io)** | Trying it out | A real time running version of the app. |
 |**[Plan](https://www.pivotaltracker.com/n/projects/2078579)** | Project Management | Up to minute tasks, goals, objectives and **assignments** can be found here. |
 |**[Editor](https://ide.c9.io/kendelljoseph/blockforge)** | Editing Code | A real time online collaborative editor.
+|**[Texting](https://discord.gg/uZ2Bn6P)** | Communicating | A collaborative **text** communicating service. <br /> ```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle |
+|**[Speaking](https://discord.gg/8tQuaXK)** | Communicating | A collaborative **voice** communicating service. <br /> ```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle|
 
 ## Installation
 - So you want to try to run your own version of the application? Here are some steps to follow. (We plans to compress the server into an native application in the future, but for now, you are going to have to be clever to get it running on your own!)

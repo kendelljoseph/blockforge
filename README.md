@@ -2,7 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/repos/59842ad4f9f0ea028a0016d3/badges/59842ad4f9f0ea028a0016d3/gpa.svg)](https://codeclimate.com/github/altereagle/blockforge)
 
-A lego block programming language. Seriously.
+### A lego block programming language. Seriously.
 ![lego](http://cdn.wallpapersafari.com/43/69/qlCby6.jpg)
 
 ## How it works
@@ -13,14 +13,14 @@ A lego block programming language. Seriously.
 
 | Resource | Purpose | Description |
 | --- | --- | --- |
-|**[App](https://blockforge-kendelljoseph.c9users.io)** | Trying it out | A real time running version of the app. |
-|**[Plan](https://www.pivotaltracker.com/n/projects/2078579)** | Project Management | Up to minute tasks, goals, objectives and **assignments** can be found here. |
-|**[Editor](https://ide.c9.io/kendelljoseph/blockforge)** | Editing Code | A real time online collaborative editor.
-|**[Texting](https://discord.gg/uZ2Bn6P)** | Communicating | A collaborative **text** communicating service. <br /> ```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle |
-|**[Speaking](https://discord.gg/8tQuaXK)** | Communicating | A collaborative **voice** communicating service. <br /> ```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle|
+|**[Application](https://blockforge-kendelljoseph.c9users.io)** | Trying it out | A running version of the app. |
+|**[Stories](https://www.pivotaltracker.com/n/projects/2078579)** | Project Management | Up to minute tasks, goals, objectives and **assignments** can be found here. <br /> --- You can learn about the planning proccess through this **[youtube video](https://youtu.be/bzCZysm5lG8)**.|
+|**[Editor](https://ide.c9.io/kendelljoseph/blockforge)** | Editing Code | A real time online collaborative editor. <br /> --- You can learn more about editing code through our online environemnt in this **[youtube video](https://youtu.be/UX0mqLVlauk)**.|
+|**[Texting](https://discord.gg/uZ2Bn6P)** | Communicating | A collaborative **text** communicating service. <br /> --- You can learn about the service in this **[youtube video](https://youtu.be/E7xznRGg9WM)**. <br />```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle |
+|**[Speaking](https://discord.gg/8tQuaXK)** | Communicating | A collaborative **voice** communicating service. <br /> --- You can learn about the service in this **[youtube video](https://youtu.be/E7xznRGg9WM)**. <br /> ```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle|
 
 ## Installation
-- So you want to try to run your own version of the application? Here are some steps to follow. (We plans to compress the server into an native application in the future, but for now, you are going to have to be clever to get it running on your own!)
+- So you want to try to run your own version of the application? Here are some steps to follow. We plan to compress blockforge into an native application in the future, but for now, you are going to have to be clever to get it running on your own!
   1. Clone this repo.
   2. Install dependencies by running `npm install` from the cloned repo folder.
   3. To ensure everything works, run `npm test` which will check if everything is all good.

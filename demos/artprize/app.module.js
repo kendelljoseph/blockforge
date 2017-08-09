@@ -28,17 +28,6 @@ app.constant('constants', {
   PUT           : 'PUT'
 });
 
-// Request interceptor for authentication
-// --------------------------------------
-app.factory('httpRequestInterceptor', ['$rootScope', '$location', function($rootScope, $location) {
-}]);
-
-// Request config
-// --------------
-app.config(function ($httpProvider) {
-  $httpProvider.interceptors.push('httpRequestInterceptor');
-});
-
 // Routes
 // ------
 app.config(function($routeProvider) {

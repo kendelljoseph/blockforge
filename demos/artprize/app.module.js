@@ -68,6 +68,6 @@ app.config(function($routeProvider) {
 
 // On Load
 // -------
-app.run(function($rootScope, $location) {
-  console.info("Blockforge loaded")
+app.run(function() {
+  console.info("Blockforge loaded");
 });

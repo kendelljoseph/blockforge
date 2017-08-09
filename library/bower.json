@@ -24,6 +24,8 @@
     "angular": "^1.6.4",
     "angular-route": "^1.6.4",
     "crypto-js": "^3.1.9",
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.0.3",
+    "three.js": "threejs#*",
+    "tracking": "tracking.js#^1.1.3"
   }
 }

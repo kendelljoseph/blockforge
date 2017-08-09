@@ -36,6 +36,9 @@
     "chai": "^3.5.0",
     "dotenv": "^4.0.0",
     "eslint": "^3.19.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

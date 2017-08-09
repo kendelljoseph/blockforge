@@ -38,22 +38,22 @@ app.config(function($routeProvider) {
 
   // Root
   // ----
-  .when('/', {
-    templateUrl: '/controllers/root/root.template.html',
+  .when('/artprize/', {
+    templateUrl: 'controllers/root/root.template.html',
     controller : 'blockforgeRoot'
   })
 
   // Dashboard
   // ---------
   .when('/dashboard/:project', {
-    templateUrl: '/controllers/dashboard/dashboard.template.html',
+    templateUrl: 'controllers/dashboard/dashboard.template.html',
     controller : 'blockforgeDashboard'
   })
 
   // Test
   // ----
   .when('/test', {
-    templateUrl: '/controllers/test/test.template.html',
+    templateUrl: 'controllers/test/test.template.html',
     controller : 'blockforgeTest'
   })
   
@@ -68,5 +68,5 @@ app.config(function($routeProvider) {
 // On Load
 // -------
 app.run(function($rootScope, $location) {
-
+  console.log("Blockforge loaded")
 });

@@ -48,7 +48,7 @@ module.exports = (options = {}) => {
       // Routes
       // ------
       app.use(`/`,        express.static(clientFolder));
-      app.use(`/library`, express.static("library"));
+      app.use(`/library`, express.static(`library`));
       
       resolve({app, server});
     });

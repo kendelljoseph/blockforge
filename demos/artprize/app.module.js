@@ -1,4 +1,5 @@
 /*globals localStorage, angular*/
+/*eslint quotes: [0] no-console: ["error", { allow: ["info", "error"] }]*/
 
 // App Module
 // ----------
@@ -68,5 +69,5 @@ app.config(function($routeProvider) {
 // On Load
 // -------
 app.run(function($rootScope, $location) {
-  console.log("Blockforge loaded")
+  console.info("Blockforge loaded")
 });

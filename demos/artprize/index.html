@@ -1,9 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ArtPrize 2017 Demo</title>
+    <title>Blockforge</title>
+    
+    <!-- Mobile Meta Tags -->
+    <meta name="viewport" content="user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/library/bower_components/normalize-css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/library/bower_components/mocha/mocha.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+    
+    <!-- Dependencies -->
+    <script type="text/javascript" src="/library/bower_components/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="/library/bower_components/mocha/mocha.js"></script>
+    <script type="text/javascript" src="/library/bower_components/chai.min/index.js"></script>
+    <script type="text/javascript" src="/library/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/library/bower_components/angular-route/angular-route.min.js"></script>
+    <!-- We will add this when we need it -->
+    <!--<script type="text/javascript" src="/library/bower_components/socket.io/lib/socket.js"></script> -->
+
+    <!-- App Module -->
+    <script type="text/javascript" src="app.module.js"></script>
+    
+    <!-- Components -->
+    
+    <!-- Controllers -->
+    <script type="text/javascript" src="controllers/root/root.controller.js"></script>
+    <script type="text/javascript" src="controllers/dashboard/dashboard.controller.js"></script>
+    <script type="text/javascript" src="controllers/test/test.controller.js"></script>
   </head>
-  <body>
-    ArtPrize Demo Using Blockforge Here!
+  
+  <body ng-app="blockforge">
+    <!-- App View -->
+    <ng-view></ng-view>
   </body>
+  
 </html>

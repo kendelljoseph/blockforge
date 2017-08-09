@@ -1,3 +1,9 @@
 language: node_js
 node_js:
   - "8.1.4"
+before_install:
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome-stable_current_amd64.deb
+  - sudo apt-get install fonts-liberation libappindicator1 xdg-utils
+  - sudo apt-get install -f
+  - sudo apt-get install firefox xvfb

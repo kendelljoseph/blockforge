@@ -6,12 +6,14 @@
 */
 
 module.exports = {
-  colors    : require(`colors`),
-  express   : require(`express`),
-  bodyParser: require(`body-parser`),
-  morgan    : require(`morgan`),
-  http      : require(`http`),
-  _         : require(`underscore`),
-  cucumber  : require(`cucumber`),
-  chai      : require(`chai`)
+  colors      : require(`colors`),
+  express     : require(`express`),
+  bodyParser  : require(`body-parser`),
+  morgan      : require(`morgan`),
+  http        : require(`http`),
+  _           : require(`underscore`),
+  cucumber    : require(`cucumber`),
+  chai        : require(`chai`),
+  chromedriver: require(`chromedriver`),
+  selenium    : require(`selenium-webdriver`)
 };

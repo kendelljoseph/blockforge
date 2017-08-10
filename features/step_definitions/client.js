@@ -11,7 +11,7 @@ const {defineSupportCode: cucumber} = dependencies.cucumber;
 // ---------------
 cucumber(({Given, When, Then}) => {
   When(/^a client browser should start up$/, function(){
-    const seleniumWebdriver = require("selenium-webdriver");
+    const seleniumWebdriver = require(`selenium-webdriver`);
     this.webdriver          = seleniumWebdriver;
     return this.driver    = new seleniumWebdriver.Builder()
       .forBrowser(`chrome`)

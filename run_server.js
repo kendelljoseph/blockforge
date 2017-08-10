@@ -1,3 +1,4 @@
+/*eslint no-console: ["error", { allow: ["info", "error"] }]*/
 // Run the server
 // --------------
 const server  = require(`./server`);
@@ -7,10 +8,10 @@ const options = {
 };
 
 server(options)
-  .then((app) => {
-    console.log(`Yay!`.rainbow);
+  .then(() => {
+    console.info(`Yay!`.rainbow);
   })
   .catch((error) => {
-    console.log(`Oops, the server couldn't start!`.red);
+    console.info(`Oops, the server couldn't start!`.red);
     console.error(error);
   });

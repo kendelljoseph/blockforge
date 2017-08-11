@@ -1,5 +1,5 @@
 # Blockforge
-
+[![Build Status](https://travis-ci.org/altereagle/blockforge.svg?branch=master)](https://travis-ci.org/altereagle/blockforge)
 [![Code Climate](https://codeclimate.com/repos/59842ad4f9f0ea028a0016d3/badges/59842ad4f9f0ea028a0016d3/gpa.svg)](https://codeclimate.com/github/altereagle/blockforge)
 [![Issue Count](https://codeclimate.com/github/altereagle/blockforge/badges/issue_count.svg)](https://codeclimate.com/github/altereagle/blockforge)
 

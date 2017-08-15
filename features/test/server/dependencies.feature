@@ -11,3 +11,5 @@ Feature: Server dependencies
       And the server chai dependency is installed
       And the server chromedriver dependency is installed
       And the server selenium dependency is installed
+      And the server neo4j dependency is installed
+      And the server socketIo dependency is installed

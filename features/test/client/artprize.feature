@@ -29,6 +29,7 @@ Feature: Artprize demo
       And a client should be able to see an element tagged script[src="/library/bower_components/angular-route/angular-route.min.js"]
       And a client should be able to see an element tagged script[src="/library/bower_components/three.js/build/three.min.js"]
       And a client should be able to see an element tagged script[src="/library/bower_components/tracking/src/tracking.js"]
+      And a client should be able to see an element tagged script[src="/library/bower_components/aframe.min/index.js"]
       And a client should be able to see an element tagged script[src="app.module.js"]
       And a client should be able to see an element tagged script[src="controllers/root/root.controller.js"]
       And a client should be able to see an element tagged script[src="controllers/dashboard/dashboard.controller.js"]

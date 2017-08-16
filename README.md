@@ -14,18 +14,19 @@
 
 | Resource | Purpose | Description |
 | --- | --- | --- |
-|⭐️ **[App](https://blockforge-kendelljoseph.c9users.io)** | Trying it out | A running version of the app. |
-|📎 **[Stories](https://www.pivotaltracker.com/n/projects/2078579)** | Project Management | Up to minute tasks, goals, objectives and **assignments** can be found here. <br /> --- *You can learn about the planning proccess through this* **[youtube video](https://youtu.be/bzCZysm5lG8)**.|
-|✍️ **[Editor](https://ide.c9.io/kendelljoseph/blockforge)**️ | Editing Code | A real time online collaborative editor. <br /> --- *You can learn more about editing code through our online environemnt in this* **[youtube video](https://youtu.be/UX0mqLVlauk)**.|
-|⌨️ **[Texting](https://discord.gg/uZ2Bn6P)** | Communicating | A collaborative **text** communicating service. <br /> --- *You can learn about the service in this* **[youtube video](https://youtu.be/E7xznRGg9WM)**. <br />```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle |
-|📞**[Speaking](https://discord.gg/8tQuaXK)** | Communicating | A collaborative **voice** communicating service. <br /> --- *You can learn about the service in this* **[youtube video](https://youtu.be/E7xznRGg9WM)**. <br /> ```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle|
+| **[App](https://blockforge-kendelljoseph.c9users.io)** | Trying it out | A running version of the app. |
+| **[Stories](https://www.pivotaltracker.com/n/projects/2078579)** | Project Management | Up to minute tasks, goals, objectives and **assignments** can be found here. <br /> --- *You can learn about the planning proccess through this* **[youtube video](https://youtu.be/bzCZysm5lG8)**.|
+| **[Editor](https://ide.c9.io/kendelljoseph/blockforge)**️ | Editing Code | A real time online collaborative editor. <br /> --- *You can learn more about editing code through our online environemnt in this* **[youtube video](https://youtu.be/UX0mqLVlauk)**.|
+| **[Texting](https://discord.gg/uZ2Bn6P)** | Communicating | A collaborative **text** communicating service. <br /> --- *You can learn about the service in this* **[youtube video](https://youtu.be/E7xznRGg9WM)**. <br />```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle |
+| **[Speaking](https://discord.gg/8tQuaXK)** | Communicating | A collaborative **voice** communicating service. <br /> --- *You can learn about the service in this* **[youtube video](https://youtu.be/E7xznRGg9WM)**. <br /> ```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle|
 
 ## Installation
 - So you want to try to run your own version of the application? Here are some steps to follow. We plan to compress blockforge into an native application in the future, but for now, you are going to have to be clever to get it running on your own!
   1. Clone this repo.
   2. Install dependencies by running `npm install` from the cloned repo folder.
-  3. To ensure everything works, run `npm test` which will check if everything is all good.
-  4. Run the server by running `npm start`.
+  4. **(Linux Only)** To install headless browser testing resources run `bash install_linux_testing_dependencies.sh`.
+  5. **(Linux Only)** To ensure everything works, run `npm test` which will check if everything is all good.
+  6. Run the server by running `npm start`.
 
 ## Nerdy Details
 | tech | use | description |

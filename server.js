@@ -9,6 +9,15 @@ const express      = dependencies.express;
 const bodyParser   = dependencies.bodyParser;
 const morgan       = dependencies.morgan;
 const http         = dependencies.http;
+const socketIo     = dependencies.socketIo;
+
+// Middleware
+// ----------
+const middleware = require(`${process.cwd()}/middleware`);
+
+// Socket Channels
+// ---------------
+const socketChannels = require(`${process.cwd()}/socket_channels`);
 
 // Messages
 // --------
@@ -27,14 +36,15 @@ module.exports = (options = {}) => {
     return new Promise((resolve, reject) => {
       const app    = new express();
       const server = http.createServer(app);
+      const io     = socketIo.listen(server);
       
-      resolve({app, server});
+      resolve({app, server, io});
     });
   };
   
   // Configure the app
   // -----------------
-  const configure = ({app, server}) => {
+  const configure = ({app, server, io}) => {
     return new Promise((resolve, reject) => {
       if(!app)          return reject(Error(serverMessages.noAppDefined));
       if(!clientFolder) return reject(Error(serverMessages.noClientFolderDefined));
@@ -45,34 +55,50 @@ module.exports = (options = {}) => {
       app.use(bodyParser.urlencoded({ extended: false }));
       app.use(bodyParser.json());
       
+      // Middleware
+      // ----------
+      app.use(middleware(app));
+      
       // Routes
       // ------
       app.use(`/`,        express.static(clientFolder));
       app.use(`/library`, express.static(`library`));
       
-      resolve({app, server});
+      resolve({app, server, io});
+    });
+  };
+  
+  // Recieve socket traffic
+  // ----------------------
+  const listenForSocketTraffic = ({app, server, io}) => {
+    return new Promise((resolve, reject) => {
+      socketChannels({app, server, io})
+        .then(() => {
+          return resolve({app, server, io});
+        })
+        .catch(reject);
     });
   };
   
   // Recieve Traffic
   // ---------------
-  const listenForTraffic = ({app, server}) => {
+  const listenForTraffic = ({app, server, io}) => {
     return new Promise((resolve, reject) => {
       server.listen(port, function(){
-        resolve({app, server});
+        resolve({app, server, io});
       });
     });
   };
   
   // Celebrate
   // ---------
-  const celebrate = ({app, server}) => {
+  const celebrate = ({app, server, io}) => {
     return new Promise((resolve, reject) => {
       serverMessages.serverOnline(serverName)
         .then((message) => {
           console.log(message);
         })
-        .then(() => resolve({app, server}))
+        .then(() => resolve({app, server, io}))
         .catch(() => {
           reject(serverMessages.genericError);
         });
@@ -84,6 +110,7 @@ module.exports = (options = {}) => {
   return new Promise((resolve, reject) => {
     return instantiate()
       .then(configure)
+      .then(listenForSocketTraffic)
       .then(listenForTraffic)
       .then(celebrate)
       .then(resolve)

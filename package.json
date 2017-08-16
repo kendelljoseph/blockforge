@@ -31,7 +31,9 @@
     "cucumber": "^2.3.1",
     "express": "^4.15.3",
     "morgan": "^1.8.2",
+    "neo4j": "^2.0.0-RC2",
     "selenium-webdriver": "^3.5.0",
+    "socket.io": "^2.0.3",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

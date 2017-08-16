@@ -19,6 +19,8 @@ then
     sudo apt-get install -f
     echo "$prompt Installing firefox runner..."
     sudo apt-get install firefox xvfb
+    echo "$prompt Removing temporary files..."
+    rm google-chrome-stable_current_amd64.deb
     echo "$prompt All done! tests should run now using [ npm test ] !"
 else
     echo "$prompt Headless browser testing resources were NOT installed!"

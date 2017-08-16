@@ -1,6 +1,6 @@
-Feature: Artprize demo
+Feature: The list of demos
   
-  Scenario: A person wants to visit the artprize demo
+  Scenario: A person wants to see a list of demos available
     Given the server should start
       And a client browser should start up
       And a client should be able to visit /

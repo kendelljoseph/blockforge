@@ -63,6 +63,8 @@ module.exports = (options = {}) => {
       // ------
       app.use(`/`,        express.static(clientFolder));
       app.use(`/library`, express.static(`library`));
+      app.use(`/media`,   express.static(`media`));
+      app.use(`/style-guide`, express.static(`style_guide`));
       
       resolve({app, server, io});
     });

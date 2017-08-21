@@ -10,7 +10,8 @@ module.exports = (grunt) => {
           interrupt: true
         },
         files: [
-          `${process.cwd()}/demos/artprize/stylesheets/*.scss`
+          `${process.cwd()}/demos/artprize/stylesheets/*.scss`,
+          `${process.cwd()}/style_guide/stylesheets/*.scss`
         ],
         tasks: [`sass`]
       }
@@ -23,6 +24,13 @@ module.exports = (grunt) => {
             cwd   : `${process.cwd()}/demos/artprize/stylesheets`,
             src   : [`*.scss`],
             dest  : `${process.cwd()}/demos/artprize/stylesheets`,
+            ext   : `.css`
+          },
+          {
+            expand: true,
+            cwd   : `${process.cwd()}/style_guide/stylesheets`,
+            src   : [`*.scss`],
+            dest  : `${process.cwd()}/style_guide/stylesheets`,
             ext   : `.css`
           }
         ]

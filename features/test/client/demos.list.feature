@@ -13,6 +13,7 @@ Feature: The list of demos
       # ---------
       And a client should be able to see an element tagged h1
       And a client should be able to see an element tagged a[href="/artprize"]
+      And a client should be able to see an element tagged a[href="/style-guide"]
 
       And a client browser should shut down
     Then the server should shut down

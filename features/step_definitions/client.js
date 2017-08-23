@@ -27,7 +27,7 @@ cucumber(({Given, When, Then}) => {
   });
 
   When(/^a client should wait for an element tagged (.*)$/, function(tag){
-    const timeout = 1000;
+    const timeout = 5000;
     return this.driver.wait(this.webdriver.until.elementLocated(this.webdriver.By.css(tag)), timeout)
       .then((element) => {
         expect(element).to.exist;

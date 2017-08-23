@@ -17,14 +17,26 @@ cucumber(({Given, When, Then}) => {
       .forBrowser(`chrome`)
       .build();
   });
-  
+
   When(/^a client browser should shut down$/, function(){
     return this.driver.quit();
   });
-  
+
   When(/^a client should be able to visit (.*)$/, function(path){
     return this.driver.get(`localhost:${this.serverData.options.port}${path}`);
   });
+
+  When(/^a client should wait for an element tagged (.*)$/, function(tag){
+    const timeout = 1000;
+    return this.driver.wait(this.webdriver.until.elementLocated(this.webdriver.By.css(tag)), timeout)
+      .then((element) => {
+        expect(element).to.exist;
+        return element.isDisplayed().then((visible) => {
+          expect(visible).to.be.true;
+        });
+      });
+  });
+
 
   When(/^a client should be able to see an element tagged (.*)$/, function(tag){
     return this.driver.findElement(this.webdriver.By.css(`${tag}`));

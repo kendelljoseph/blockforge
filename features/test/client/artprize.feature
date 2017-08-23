@@ -36,14 +36,14 @@ Feature: Artprize demo
       # -------------
       And a client should be able to see an element tagged [ng-app="blockforge"]
       And a client should be able to see an element tagged ng-view
-      And a client should be able to see an element tagged ng-view > demo-header
-      And a client should be able to see an element tagged ng-view > demo-header > artprize-logo
-      And a client should be able to see an element tagged ng-view > demo-header > artprize-logo > img[id="artprize_logo"][src="/media/images/artprize_9_logo.png"]
-      And a client should be able to see an element tagged ng-view > demo-header > demo-title
-      And a client should be able to see an element tagged ng-view > demo-content
-      And a client should be able to see an element tagged ng-view > demo-content > demo-bold-text
-      And a client should be able to see an element tagged ng-view > demo-content > demo-button-options
-      And a client should be able to see an element tagged ng-view > demo-content > demo-button-options > demo-button[data-type="camera"]
-      And a client should be able to see an element tagged ng-view > demo-content > demo-button-options > demo-button[data-type="viewer"]
+      And a client should wait for an element tagged ng-view > demo-header
+      And a client should wait for an element tagged ng-view > demo-header > artprize-logo
+      And a client should wait for an element tagged ng-view > demo-header > artprize-logo > img[id="artprize_logo"][src="/media/images/artprize_9_logo.png"]
+      And a client should wait for an element tagged ng-view > demo-header > demo-title
+      And a client should wait for an element tagged ng-view > demo-content
+      And a client should wait for an element tagged ng-view > demo-content > demo-bold-text
+      And a client should wait for an element tagged ng-view > demo-content > demo-button-options
+      And a client should wait for an element tagged ng-view > demo-content > demo-button-options > demo-button[data-type="camera"]
+      And a client should wait for an element tagged ng-view > demo-content > demo-button-options > demo-button[data-type="viewer"]
       And a client browser should shut down
     Then the server should shut down

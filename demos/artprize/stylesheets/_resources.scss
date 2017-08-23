@@ -1,5 +1,6 @@
 // Colors
 $primary-button-color                  : #000;
+$fallback-color                        : green;
 
 // Fonts & Font Styles
 $primary-button-font-family            : Arial, sans-serif;
@@ -13,5 +14,5 @@ $primary-button-border-radius          : 3px;
 
 // Effects
 $primary-button-cursor                 : pointer;
-$primary-button-text-shadow            : inset 0px 1px 1px #fff;
+$primary-button-text-shadow            : inset 0 1px 1px #fff;
 $primary-button-shading                : inset 0 0 30px -10px #000;

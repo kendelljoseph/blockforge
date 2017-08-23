@@ -10,6 +10,7 @@ demo-header {
   align-items    : center;
   justify-content: space-around;
   flex           : 0 1 100%;
+  background     : $fallback-color;
   background     : rgba(0, 0, 0, 0.25);
 }
 
@@ -33,6 +34,7 @@ demo-bold-text {
   font-family    : Arial, sans-serif;
   padding        : 20px;
   cursor         : default;
+  background     : $fallback-color;
   background     : rgba(0, 0, 0, 0.20);
 }
 
@@ -42,5 +44,6 @@ demo-button-options {
   justify-content: space-around;
   align-items    : center;
   flex           : 1 1 100%;
+  background     : $fallback-color;
   background     : rgba(0, 0, 0, 0.15);
 }

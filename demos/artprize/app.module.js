@@ -9,8 +9,8 @@ const app = angular.module(`blockforge`,[
 
 // Constants
 // ---------
-app.constant('constants', {
-  
+app.constant(`constants`, {
+
 });
 
 // Routes
@@ -23,29 +23,29 @@ app.config(($routeProvider) => {
 
   // Root
   // ----
-  .when('/', {
-    templateUrl: 'controllers/root/root.template.html',
-    controller : 'blockforgeRoot'
+  .when(`/`, {
+    templateUrl: `controllers/root/root.template.html`,
+    controller : `blockforgeRoot`
   })
 
   // Viewer
   // ------
-  .when('/viewer/:options', {
-    templateUrl: 'controllers/viewer/viewer.template.html',
-    controller : 'blockforgeViewer'
+  .when(`/viewer/:options`, {
+    templateUrl: `controllers/viewer/viewer.template.html`,
+    controller : `blockforgeViewer`
   })
-  
+
   // Viewer
   // ------
-  .when('/camera/:options', {
-    templateUrl: 'controllers/camera/camera.template.html',
-    controller : 'blockforgeCamera'
+  .when(`/camera/:options`, {
+    templateUrl: `controllers/camera/camera.template.html`,
+    controller : `blockforgeCamera`
   })
-  
+
   // Fallback
   // --------
   .otherwise({
-    redirectTo: '/'
+    redirectTo: `/`
   });
 
 });

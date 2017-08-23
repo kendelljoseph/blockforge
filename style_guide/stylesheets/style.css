@@ -8,7 +8,7 @@ demo-button {
   cursor: pointer;
   font-family: Arial, sans-serif;
   font-size: 1.3em;
-  text-shadow: inset 0px 1px 1px #fff;
+  text-shadow: inset 0 1px 1px #fff;
   color: rgba(0, 0, 0, 0.75);
   box-shadow: inset 0 0 30px -10px #000;
   font-weight: bold;

@@ -54,6 +54,7 @@ demo-button {
   font-family: Arial, sans-serif;
   font-size: 1.3em;
   text-shadow: inset 0 1px 1px #fff;
+  color: green;
   color: white;
   box-shadow: inset 0 0 30px -10px #000;
   font-weight: bold;

@@ -30,14 +30,18 @@ cucumber(({Given, When, Then}) => {
     return this.page.goto(`http://localhost:${this.serverData.options.port}${path}`);
   });
 
+  // Check for an elements existance
+  // -------------------------------
+  const checkElementExistance = (element) => {
+    return new Promise((resolve) => {
+      expect(element).to.exist;
+      resolve();
+    });
+  };
+
   When(/^a client should be able to see an element with the selector (.*)$/, function(tag){
     return this.page.$(tag)
-      .then((element) => {
-        return new Promise((resolve) => {
-          expect(element).to.exist;
-          resolve();
-        });
-      });
+      .then(checkElementExistance);
   });
 
   When(/^a client should wait to be able to see an element with the selector (.*)$/, function(tag){
@@ -45,48 +49,37 @@ cucumber(({Given, When, Then}) => {
       .then(() => {
         return this.page.$(tag);
       })
-      .then((element) => {
-        return new Promise((resolve) => {
-          expect(element).to.exist;
-          resolve();
-        });
-      });
+      .then(checkElementExistance);
   });
+
+  // Check the inner text of an element
+  // ----------------------------------
+  const checkInnerText = (text) => {
+    return (element) => {
+      return new Promise((resolve, reject) => {
+        expect(element).to.exist;
+
+        element.evaluate((what) => {
+          return this.innerText;
+        }).then((result) => {
+          expect(result).to.equal(text);
+        })
+        .then(resolve)
+        .catch(reject);
+      });
+    };
+  };
 
   When(/^a client should wait to be able to see an element tagged (.*) containing the text value (.*)$/, function(tag, text){
     return this.page.waitForSelector(tag)
       .then(() => {
         return this.page.$(tag);
       })
-      .then((element) => {
-        return new Promise((resolve, reject) => {
-          expect(element).to.exist;
-
-          element.evaluate((what) => {
-            return this.innerText;
-          }).then((result) => {
-            expect(result).to.equal(text);
-          })
-          .then(resolve)
-          .catch(reject);
-        });
-      });
+      .then(checkInnerText(text));
   });
 
   When(/^a client should be able to see an element tagged (.*) containing the text value (.*)$/, function(tag, text){
     return this.page.$(tag)
-      .then((element) => {
-        return new Promise((resolve, reject) => {
-          expect(element).to.exist;
-
-          element.evaluate((what) => {
-            return this.innerText;
-          }).then((result) => {
-            expect(result).to.equal(text);
-          })
-          .then(resolve)
-          .catch(reject);
-        });
-      });
+      .then(checkInnerText(text));
   });
 });

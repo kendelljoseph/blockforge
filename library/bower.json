@@ -15,11 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "mocha.min": "https://cdnjs.cloudflare.com/ajax/libs/mocha/2.3.3/mocha.min.js",
-    "chai.min": "https://cdnjs.cloudflare.com/ajax/libs/chai/3.3.0/chai.min.js",
     "jquery": "^3.1.1",
     "underscore": "^1.8.3",
-    "mocha": "^3.1.0",
     "normalize-css": "^7.0.0",
     "angular": "^1.6.4",
     "angular-route": "^1.6.4",

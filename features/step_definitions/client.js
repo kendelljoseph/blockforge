@@ -18,9 +18,9 @@ cucumber(({Given, When, Then}) => {
         return this.browser.newPage()
           .then((page) => {
             this.page = page;
-            page.on('console', (...args) => {
-            for (let i = 0; i < args.length; ++i)
-              console.info(`${i}: ${args[i]}`.bold.magenta);
+            page.on(`console`, (...args) => {
+              for (let i = 0; i < args.length; ++i)
+                console.info(`${i}: ${args[i]}`.bold.magenta);
             });
           });
       });

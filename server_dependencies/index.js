@@ -14,8 +14,7 @@ module.exports = {
   _           : require(`underscore`),
   cucumber    : require(`cucumber`),
   chai        : require(`chai`),
-  chromedriver: require(`chromedriver`),
-  selenium    : require(`selenium-webdriver`),
   neo4j       : require(`neo4j`),
-  socketIo    : require(`socket.io`)
+  socketIo    : require(`socket.io`),
+  puppeteer   : require(`puppeteer`)
 };

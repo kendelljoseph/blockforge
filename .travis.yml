@@ -2,16 +2,4 @@ language: node_js
 node_js:
   - "8.2.1"
 before_install:
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - echo "$prompt Updating system..."
-  - sudo apt-get update
-  - echo "$prompt Installing Chrome..."
-  - sudo dpkg -i google-chrome-stable_current_amd64.deb
-  - echo "$prompt Installing other dependencies..."
-  - sudo apt-get install fonts-liberation libappindicator1 xdg-utils
-  - echo "$prompt Reconciling installed dependencies..."
-  - sudo apt-get install -f
-  - echo "$prompt Installing firefox runner..."
-  - sudo apt-get install firefox xvfb
-  - echo "$prompt Removing temporary files..."
-  - rm google-chrome-stable_current_amd64.deb
+ - bash install_bower_components.sh

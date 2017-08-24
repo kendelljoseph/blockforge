@@ -1,1 +1,0 @@
-/*eslint quotes: [0] no-console: ["error", { allow: ["info", "error"] }]*/

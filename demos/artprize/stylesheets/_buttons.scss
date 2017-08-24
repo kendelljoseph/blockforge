@@ -1,0 +1,19 @@
+demo-button {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  background     : $fallback-color;
+  background     : $primary-button-color;
+  padding        : $primary-button-padding;
+  border-radius  : $primary-button-border-radius;
+  cursor         : $primary-button-cursor;
+  font-family    : $primary-button-font-family;
+  font-size      : $primary-button-font-size;
+  text-shadow    : $primary-button-text-shadow;
+  color          : $fallback-color;
+  color          : $primary-button-font-color;
+  box-shadow     : $primary-button-shading;
+  font-weight    : bold;
+  user-select    : none;
+  text-transform : uppercase;
+}

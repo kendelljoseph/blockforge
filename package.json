@@ -4,7 +4,7 @@
   "description": "A lego block programming language",
   "main": "run_server.js",
   "scripts": {
-    "test": "xvfb-run ./node_modules/.bin/cucumber.js",
+    "test": "./node_modules/.bin/cucumber.js",
     "start": "node run_server.js"
   },
   "directories": {
@@ -26,13 +26,13 @@
   "homepage": "https://github.com/altereagle/blockforge#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "chromedriver": "^2.31.0",
+    "bower": "^1.8.0",
     "colors": "^1.1.2",
     "cucumber": "^2.3.1",
     "express": "^4.15.3",
     "morgan": "^1.8.2",
     "neo4j": "^2.0.0-RC2",
-    "selenium-webdriver": "^3.5.0",
+    "puppeteer": "^0.9.0",
     "socket.io": "^2.0.3",
     "underscore": "^1.8.3"
   },

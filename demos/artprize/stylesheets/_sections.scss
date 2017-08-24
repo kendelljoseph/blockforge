@@ -1,0 +1,49 @@
+demo-header,
+demo-content,
+demo-bold-text,
+demo-button-options, {
+  display    : flex;
+  user-select: none;
+}
+
+demo-header {
+  align-items    : center;
+  justify-content: space-around;
+  flex           : 0 1 100%;
+  background     : $fallback-color;
+  background     : rgba(0, 0, 0, 0.25);
+}
+
+demo-content {
+  justify-content: flex-start;
+  align-items    : stretch;
+  flex-flow      : column;
+  flex           : 1 1 auto;
+}
+
+demo-title {
+  font-size  : 1.2em;
+  font-family: Arial, sans-serif;
+  cursor     : default;
+}
+
+demo-bold-text {
+  align-items: center;
+  justify-content: center;
+  font-size      : 2em;
+  font-family    : Arial, sans-serif;
+  padding        : 20px;
+  cursor         : default;
+  background     : $fallback-color;
+  background     : rgba(0, 0, 0, 0.20);
+}
+
+demo-button-options {
+  display        : flex;
+  flex-flow      : column;
+  justify-content: space-around;
+  align-items    : center;
+  flex           : 1 1 100%;
+  background     : $fallback-color;
+  background     : rgba(0, 0, 0, 0.15);
+}

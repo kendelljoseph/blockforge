@@ -1,37 +1,21 @@
-/*globals localStorage, angular*/
-/*eslint quotes: [0] no-console: ["error", { allow: ["info", "error"] }]*/
+/*globals angular*/
+/*eslint no-console: ["error", { allow: ["info", "error"] }]*/
 
 // App Module
 // ----------
-var app = angular.module("blockforge",[
-  "ngRoute"
+const app = angular.module(`blockforge`,[
+  `ngRoute`
 ]);
 
 // Constants
 // ---------
-app.constant('constants', {
-  // Titles
-  // ------
-  DASHBOARD_TITLE: 'Blockforge:Dashboard',
-  HOME_TITLE     : 'Blockforge',
+app.constant(`constants`, {
 
-  // Paths and Routes
-  // ----------------
-  DASHBOARD_PATH: '/dashboard',
-  HOME_PATH     : '/',
-
-  // Request Types
-  // -------------
-  GET           : 'GET',
-  POST          : 'POST',
-  DELETE        : 'DELETE',
-  PATCH         : 'PATCH',
-  PUT           : 'PUT'
 });
 
 // Routes
 // ------
-app.config(function($routeProvider) {
+app.config(($routeProvider) => {
 
   // Route Provider
   // --------------
@@ -39,35 +23,35 @@ app.config(function($routeProvider) {
 
   // Root
   // ----
-  .when('/artprize/', {
-    templateUrl: 'controllers/root/root.template.html',
-    controller : 'blockforgeRoot'
+  .when(`/`, {
+    templateUrl: `controllers/root/root.template.html`,
+    controller : `blockforgeRoot`
   })
 
-  // Dashboard
-  // ---------
-  .when('/dashboard/:project', {
-    templateUrl: 'controllers/dashboard/dashboard.template.html',
-    controller : 'blockforgeDashboard'
+  // Viewer
+  // ------
+  .when(`/viewer/:options`, {
+    templateUrl: `controllers/viewer/viewer.template.html`,
+    controller : `blockforgeViewer`
   })
 
-  // Test
-  // ----
-  .when('/test', {
-    templateUrl: 'controllers/test/test.template.html',
-    controller : 'blockforgeTest'
+  // Viewer
+  // ------
+  .when(`/camera/:options`, {
+    templateUrl: `controllers/camera/camera.template.html`,
+    controller : `blockforgeCamera`
   })
-  
+
   // Fallback
   // --------
   .otherwise({
-    redirectTo: '/'
+    redirectTo: `/`
   });
 
 });
 
 // On Load
 // -------
-app.run(function() {
-  console.info("Blockforge loaded");
+app.run(() => {
+  console.info(`%c Blockforge v1.0.0`, `color: #333; font-size: 1.3em;`);
 });

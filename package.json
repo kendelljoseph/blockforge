@@ -4,7 +4,7 @@
   "description": "A lego block programming language",
   "main": "run_server.js",
   "scripts": {
-    "test": "xvfb-run ./node_modules/.bin/cucumber.js",
+    "test": "./node_modules/.bin/cucumber.js",
     "start": "node run_server.js"
   },
   "directories": {

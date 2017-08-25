@@ -1,3 +1,4 @@
+/*eslint no-unused-vars: [0] no-console: ["error", { allow: ["info", "error"] }]*/
 // The Server
 // ----------
 
@@ -29,47 +30,47 @@ module.exports = (options = {}) => {
   const serverName   = options.serverName;
   const clientFolder = options.clientFolder;
   const port         = options.port || process.env.PORT || 8080;
-  
+
   // Instantiate the app
   // -------------------
   const instantiate = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const app    = new express();
       const server = http.createServer(app);
       const io     = socketIo.listen(server);
-      
+
       resolve({app, server, io});
     });
   };
-  
+
   // Configure the app
   // -----------------
   const configure = ({app, server, io}) => {
     return new Promise((resolve, reject) => {
       if(!app)          return reject(Error(serverMessages.noAppDefined));
       if(!clientFolder) return reject(Error(serverMessages.noClientFolderDefined));
-      
+
       // App options
       // -----------
       app.use(morgan(`dev`));
       app.use(bodyParser.urlencoded({ extended: false }));
       app.use(bodyParser.json());
-      
+
       // Middleware
       // ----------
       app.use(middleware(app));
-      
+
       // Routes
       // ------
       app.use(`/`,        express.static(clientFolder));
       app.use(`/library`, express.static(`library`));
       app.use(`/media`,   express.static(`media`));
       app.use(`/style-guide`, express.static(`style_guide`));
-      
+
       resolve({app, server, io});
     });
   };
-  
+
   // Recieve socket traffic
   // ----------------------
   const listenForSocketTraffic = ({app, server, io}) => {
@@ -81,24 +82,24 @@ module.exports = (options = {}) => {
         .catch(reject);
     });
   };
-  
+
   // Recieve Traffic
   // ---------------
   const listenForTraffic = ({app, server, io}) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       server.listen(port, function(){
         resolve({app, server, io});
       });
     });
   };
-  
+
   // Celebrate
   // ---------
   const celebrate = ({app, server, io}) => {
     return new Promise((resolve, reject) => {
       serverMessages.serverOnline(serverName)
         .then((message) => {
-          console.log(message);
+          console.info(message);
         })
         .then(() => resolve({app, server, io}))
         .catch(() => {
@@ -106,7 +107,7 @@ module.exports = (options = {}) => {
         });
     });
   };
-  
+
   // Do all the things
   // -----------------
   return new Promise((resolve, reject) => {

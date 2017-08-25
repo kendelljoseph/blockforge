@@ -105,8 +105,8 @@ cucumber(({Given, When, Then}) => {
           return attributes;
         }).then((result) => {
 
-          if(typeof value === "string"){
-            value = value.split("__")[1] ? "#" + value.split("__")[1] : value;
+          if(typeof value === `string`){
+            value = value.split(`__`)[1] ? `#` + value.split(`__`)[1] : value;
           }
 
           expect(result).to.exist;

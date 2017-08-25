@@ -1,6 +1,6 @@
-Feature: Artprize demo
+Feature: ArtPrize demo root elements
 
-  Scenario: A person wants to visit the artprize demo
+  Scenario: A person visits the ArtPrize demo and arrives at the root page
     Given the server should start
       And a client browser should start up
       And a client should be able to visit /artprize

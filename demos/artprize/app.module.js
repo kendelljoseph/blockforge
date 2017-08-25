@@ -10,7 +10,7 @@ const app = angular.module(`blockforge`,[
 // Constants
 // ---------
 app.constant(`constants`, {
-
+  VIEWER_PATH: `/viewer/1`
 });
 
 // Routes

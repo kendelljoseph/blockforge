@@ -82,4 +82,7 @@ ng-view {
   flex-flow: column;
   flex: 1 1 auto; }
 
+ng-view a-scene {
+  height: 100vh; }
+
 /*# sourceMappingURL=style.css.map */

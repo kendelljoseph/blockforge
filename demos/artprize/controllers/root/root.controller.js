@@ -7,5 +7,9 @@ app.controller(`blockforgeRoot`, [`$scope`, `$location`, `constants`, function($
   // ---------------
   $scope.showViewer = () => $location.path($constants.VIEWER_PATH);
 
+  // Show the camera
+  // ---------------
+  $scope.showCamera = () => $location.path($constants.CAMERA_PATH);
+
   console.info(`Root Loaded...`);
 }]);

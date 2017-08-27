@@ -2,7 +2,8 @@
 @import "resources"; // Colors, Dimensions & other variables
 @import "sections";  // Sections
 @import "buttons";   // Buttons
-@import "artprize";   // Buttons
+@import "artprize";  // Artprize specific
+@import "camera";    // Camera
 
 body {
   display        : flex;

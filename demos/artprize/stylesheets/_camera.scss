@@ -1,0 +1,18 @@
+#video, #canvas {
+  position  : absolute;
+  top       : 76px;
+  margin    : 0;
+  padding   : 0;
+  box-sizing: border-box;
+}
+
+#video {
+  opacity: 0;
+  top    : -3000px;
+  left   : -3000px;
+}
+
+#canvas {
+  border-top: 2px solid #000;
+  background: #333;
+}

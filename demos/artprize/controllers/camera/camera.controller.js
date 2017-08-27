@@ -52,7 +52,7 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
       canvas.strokeStyle = rectange.color;
       canvas.strokeRect(rectange.x, rectange.y, rectange.width, rectange.height);
       canvas.font = `11px Helvetica`;
-      canvas.fillStyle = "#fff";
+      canvas.fillStyle = `#fff`;
       canvas.fillText(`x: ` + rectange.x + `px`, rectange.x + rectange.width + 5, rectange.y + 11);
       canvas.fillText(`y: ` + rectange.y + `px`, rectange.x + rectange.width + 5, rectange.y + 22);
     });

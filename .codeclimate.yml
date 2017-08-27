@@ -5,6 +5,9 @@ engines:
     enabled: true
   csslint:
     enabled: true
+    checks:
+      box-sizing:
+        enabled: false
   nodesecurity:
     enabled: false
   duplication:
@@ -13,8 +16,8 @@ engines:
       languages:
         javascript:
           mass_threshold: 100
-    
-    
+
+
 ratings:
   paths:
   - "**.js"

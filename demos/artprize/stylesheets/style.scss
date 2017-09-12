@@ -4,6 +4,7 @@
 @import "buttons";   // Buttons
 @import "artprize";  // Artprize specific
 @import "camera";    // Camera
+@import url('https://fonts.googleapis.com/css?family=Bungee');
 
 body {
   display        : flex;
@@ -12,6 +13,7 @@ body {
   justify-content: flex-start;
   width          : 100vw;
   height         : 100vh;
+  font-family    : $primary-font-family;
 }
 
 ng-view {

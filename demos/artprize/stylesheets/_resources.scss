@@ -1,18 +1,20 @@
 // Colors
-$primary-button-color                  : #000;
-$fallback-color                        : green;
+$primary-button-color                  : green;
+$fallback-color                        : #000;
+$secondary-button-color                : yellowgreen;
 
 // Fonts & Font Styles
-$primary-button-font-family            : Arial, sans-serif;
-$primary-button-font-size              : 1.3em;
+$primary-font-family                   : 'Bungee', cursive;
+$primary-button-font-size              : 10vw;
 $primary-button-font-color             : rgba(255, 255, 255, 1);
 
 // Dimensions
-$default-button-height                 : 40px;
+$primary-button-height                 : 50vh;
 $primary-button-padding                : 40px;
 $primary-button-border-radius          : 3px;
+$primary-button-width                  : 100%;
 
 // Effects
 $primary-button-cursor                 : pointer;
 $primary-button-text-shadow            : inset 0 1px 1px #fff;
-$primary-button-shading                : inset 0 0 30px -10px #000;
+$primary-button-shading                : inset 0 0 43px -4px #000

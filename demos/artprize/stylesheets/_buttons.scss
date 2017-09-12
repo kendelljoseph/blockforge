@@ -4,10 +4,10 @@ demo-button {
   align-items    : center;
   background     : $fallback-color;
   background     : $primary-button-color;
-  padding        : $primary-button-padding;
+  width          : $primary-button-width;
+  height         : $primary-button-height;
   border-radius  : $primary-button-border-radius;
   cursor         : $primary-button-cursor;
-  font-family    : $primary-button-font-family;
   font-size      : $primary-button-font-size;
   text-shadow    : $primary-button-text-shadow;
   color          : $fallback-color;
@@ -16,4 +16,8 @@ demo-button {
   font-weight    : bold;
   user-select    : none;
   text-transform : uppercase;
+}
+
+demo-button:hover {
+  background     : $secondary-button-color;
 }

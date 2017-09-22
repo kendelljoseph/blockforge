@@ -18,6 +18,7 @@ Feature: ArtPrize demo root elements
       # ---
       And a client should be able to see an element with the selector link[href="/library/bower_components/normalize-css/normalize.css"]
       And a client should be able to see an element with the selector link[href="stylesheets/style.css"]
+      And a client should be able to see an element with the selector link[href="https://fonts.googleapis.com/css?family=Bungee"]
 
       # JavaScript Dependencies
       # -----------------------
@@ -38,9 +39,9 @@ Feature: ArtPrize demo root elements
       And a client should wait to be able to see an element with the selector ng-view > demo-header
       And a client should wait to be able to see an element with the selector ng-view > demo-header > artprize-logo
       And a client should wait to be able to see an element with the selector ng-view > demo-header > artprize-logo > img[id="artprize_logo"][src="/media/images/artprize_9_logo.png"]
-      And a client should wait to be able to see an element tagged ng-view > demo-header > demo-title containing the text value VR Demo
+      And a client should wait to be able to see an element tagged ng-view > demo-header > demo-title containing the text value Blockforge VR Demo
       And a client should wait to be able to see an element with the selector ng-view > demo-content
-      And a client should wait to be able to see an element tagged ng-view > demo-content > demo-bold-text containing the text value This is a ...
+      And a client should wait to be able to see an element tagged ng-view > demo-content > demo-bold-text containing the text value Choose roll:
       And a client should wait to be able to see an element with the selector ng-view > demo-content > demo-button-options
       And a client should wait to be able to see an element tagged ng-view > demo-content > demo-button-options > demo-button[data-type="camera"] containing the text value CAMERA
       And a client should wait to be able to see an element tagged ng-view > demo-content > demo-button-options > demo-button[data-type="viewer"] containing the text value VIEWER

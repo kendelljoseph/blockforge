@@ -46,7 +46,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
   // -------------------
   const blockforgeSettings = {
     name  : `Art Prize`,
-    socket: io.connect(`${location.origin}/listen`)
+    socket: io.connect(`${location.origin}/receive`)
   };
 
   // Blockforge

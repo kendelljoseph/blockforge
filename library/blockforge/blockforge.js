@@ -17,6 +17,10 @@ class Blockforge {
     this.socket = options.socket
       || (io ? io.connect(options.server) : undefined);
 
+    this.socket.on(`connect`, () => {
+      console.info(`socket connected...`);
+    });
+
     // Setup tracking
     // --------------
     this.tracking = options.tracking || tracking;
@@ -56,12 +60,9 @@ class Blockforge {
   on(event, handler) {
     if(!event || !event.length) throw Error({message: `Event handler is missing a name`});
 
-    // Set the channel name
-    const channelName = `${this.name || ``}:${event}`;
-
     // Listen to events on this channel
     // --------------------------------
-    this.socket.on(channelName, handler);
+    this.socket.on(event, handler);
   }
 
   // Get size check
@@ -194,6 +195,15 @@ class Blockforge {
     const blockTracker = new tracking.ColorTracker(colorOptions);
     tracking.track(this.elements.video, blockTracker, { camera: true });
 
+    // Block sender
+    // ------------
+    const sendBlocks = (blocks) => {
+
+      // Send the blocks to the server
+      // -----------------------------
+      this.socket.emit(`blocks`, blocks);
+    };
+
     // Start tracking blocks
     // ---------------------
     blockTracker.on(`track`, ({data}) => {
@@ -257,7 +267,14 @@ class Blockforge {
         // ----------------------------
         blocks.forEach((otherBlock) => {
           const isSameLine = Math.abs(block.y - otherBlock.y) <= this.line.tolerance;
-          if(isSameLine) line.push(otherBlock);
+          if(isSameLine) {
+            line.push(otherBlock);
+            const lineId = otherBlock.lineId || this.generateHash(6);
+
+            block.lineId = lineId;
+
+            if(!otherBlock.lineId) otherBlock.lineId = lineId;
+          }
         });
 
         // Sort the line
@@ -271,13 +288,87 @@ class Blockforge {
         block.line = line;
       });
 
-      // Remove x and y values
-      // ---------------------
+      // Get just the blocks by lines
+      // ----------------------------
+      let lines = blocks.map((block) => {
+        return block.line;
+      });
+
+      // Block group storage
+      // -------------------
+      let group = {};
+
+      // Group blocks by line
+      // --------------------
+      lines.forEach((line, i) => {
+        line.forEach((block) => {
+          // Get the next group
+          // ------------------
+          const nextGroup = group[block.lineId] ? group[block.lineId] : [];
+
+          // Check if the block exists in the group
+          // --------------------------------------
+          const existingBlock = nextGroup.find((lineBlock) => {
+            return lineBlock.id == block.id;
+          });
+
+          // Add the block to the group if it is not already there
+          // -----------------------------------------------------
+          if(!existingBlock) nextGroup.push(block);
+
+          // Add the line to the group
+          // -------------------------
+          if(!group[block.lineId]) group[block.lineId] = nextGroup;
+
+          // Delete the line information from the block
+          // ------------------------------------------
+          delete block.line;
+        });
+      });
+
+      // Get the max values from the group
+      // ---------------------------------
+      let maxValues = [];
+      Object.keys(group).forEach((groupId) => {
+        let blockGroup = group[groupId];
+        let y          = blockGroup.reduce((block, nextBlock) => {
+          return Math.max(block.y, nextBlock.y);
+        });
+
+        maxValues.push({
+          groupId, y
+        });
+      });
+
+      // Sorted Blocks
+      // -------------
+      let sortedBlocks = [];
+
+      // Sort the max values
+      // -------------------
+      maxValues.sort((groupValue) => {
+        return groupValue.y;
+      }).forEach(({groupId}) => {
+        // Extract just the label of the block
+        // -----------------------------------
+        let blockLabels = group[groupId].map((block) => {
+          return block.label;
+        });
+
+        // Add the extracted list to the sorted blocks list
+        // ------------------------------------------------
+        sortedBlocks.push(blockLabels);
+      });
+
+      // Remove all unnecessary values
+      // -----------------------------
       blocks.forEach((block) => {
         canvas.fillText(`I: ${block.index}`, block.x + 5, block.y + 60);
-        delete block.x;
-        delete block.y;
       });
+
+      // Send blocks
+      // -----------
+      if(sortedBlocks.length) sendBlocks(sortedBlocks);
     });
   }
 }

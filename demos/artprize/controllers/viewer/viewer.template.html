@@ -1,7 +1,35 @@
-<a-scene>
-  <a-box ng-repeat="box in boxes" position="{{box.position}}" rotation="{{box.rotation}}" color="{{box.color}}"></a-box>
-  <a-sphere ng-repeat="sphere in spheres" position="{{sphere.position}}" radius="{{sphere.radius}}" color="{{sphere.color}}"></a-sphere>
-  <a-cylinder ng-repeat="cylinder in cylinders" position="{{cylinder.position}}" radius="{{cylinder.radius}}" height="{{cylinder.height}}" color="{{cylinder.color}}"></a-cylinder>
-  <a-plane ng-repeat="plane in planes" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}"></a-plane>
+<a-scene fog="type: linear; color: #000; near: 3; far: 15;">
+  <a-assets>
+    <!-- Images -->
+    <img id="poster1" src="images/poster_1.png">
+    <img id="poster2" src="images/poster_2.png">
+
+    <!-- Models -->
+    <a-asset-item id="cat" src="models/cat_obj.dae"></a-asset-item>
+  </a-assets>
+
+  <!-- Camera -->
+  <a-entity camera="userHeight: 1.6" look-controls></a-entity>
+
+  <!-- Lights -->
+  <a-entity light="type:directional; castShadow:true; color:#777;" position="0 0.5 0.15"></a-entity>
+  <a-entity light="type:directional; castShadow:true; color:#555;" position="0.15 0.5 0"></a-entity>
+  <a-entity light="type:directional; color:#111;" position="0.1 -0.5 0"></a-entity>
+
+  <!-- Posters -->
+  <a-image src="#poster1" position="0 8 -6" rotation="23 0 0" width="8" height="10"></a-image>
+  <a-image src="#poster2" position="-6 8 0" rotation="23 90 0" width="8" height="10"></a-image>
+
+  <!-- Models -->
+  <a-text value="Meow..." position="-2 1 0" rotation="0 90 0" scale="0.35 0.35 0.35" ></a-text>
+  <a-collada-model src="#cat" position="-2 0 0" rotation="0 40 0" scale="0.25 0.25 0.25" shadow="cast: true; receive: true"></a-collada-model>
+
+  <!-- status messages -->
+  <a-text value="{{status}}" position="-0.25 1 -1" rotation="0 0 0" scale="0.30 0.30 0.30" ></a-text>
+
+  <a-box ng-repeat="box in boxes" position="{{box.position}}" rotation="{{box.rotation}}" color="{{box.color}}" scale="0.5 0.5 0.5" shadow="cast: true; receive: true"></a-box>
+  <a-sphere ng-repeat="sphere in spheres" position="{{sphere.position}}" radius="{{sphere.radius}}" color="{{sphere.color}}" shadow="cast: true; receive: true"></a-sphere>
+  <a-cylinder ng-repeat="cylinder in cylinders" position="{{cylinder.position}}" radius="{{cylinder.radius}}" height="{{cylinder.height}}" color="{{cylinder.color}}" shadow="cast: true; receive: true"></a-cylinder>
+  <a-plane ng-repeat="plane in planes" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}" shadow="receive: true"></a-plane>
   <a-sky color="{{sky.color}}"></a-sky>
 </a-scene>

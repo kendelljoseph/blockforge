@@ -223,19 +223,17 @@ class Blockforge {
         const blockName   = this.registeredBlocks[block.color].name;
         const isRightSize = this.registeredBlocks[block.color].size(block.width, block.height);
 
-        // Do nothiing if the block is not the right size
-        // ----------------------------------------------
-        if(!isRightSize) return;
-
         // Add this block to the list of detected blocks
         // ---------------------------------------------
-        blocks.push({
-          id       : this.generateHash(6),
-          name     : blockName,
-          x        : block.x,
-          y        : block.y,
-          label    : block.color
-        });
+        if(isRightSize){
+          blocks.push({
+            id       : this.generateHash(6),
+            name     : blockName,
+            x        : block.x,
+            y        : block.y,
+            label    : block.color
+          });
+        }
 
         // Use the block draw color
         // ------------------------
@@ -255,7 +253,6 @@ class Blockforge {
         canvas.fillText(`H: ${block.height}`, block.x + 5, block.y + 24);
         canvas.fillText(`X: ${block.x}`, block.x + 5, block.y + 36);
         canvas.fillText(`Y: ${block.y}`, block.x + 5, block.y + 48);
-
       });
 
       // Sort and add indexes to blocks by line

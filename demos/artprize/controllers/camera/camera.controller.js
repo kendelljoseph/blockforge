@@ -28,24 +28,24 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Square`,
     size: {
       width: {
-        'greater-than': 50,
-        'less-than'   : 90
+        'greater-than': 100,
+        'less-than'   : 150
       },
       height: {
-        'greater-than': 100,
-        'less-than'   : 200
+        'greater-than': 60,
+        'less-than'   : 100
       }
     },
     drawColor: `red`,
     color: {
       red: {
-        'greater-than': 100
+        'greater-than': 200
       },
       green: {
-        'less-than': 100
+        'less-than': 120
       },
       blue: {
-        'less-than': 100
+        'less-than': 120
       }
     }
   });
@@ -67,13 +67,13 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     drawColor: `#f00`,
     color: {
       red: {
-        'greater-than': 100
+        'greater-than': 200
       },
       green: {
-        'less-than': 100
+        'less-than': 120
       },
       blue: {
-        'less-than': 100
+        'less-than': 120
       }
     }
   });
@@ -84,23 +84,23 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Square`,
     size: {
       width: {
-        'greater-than': 100,
-        'less-than'   : 150
+        'greater-than': 80,
+        'less-than'   : 100
       },
       height: {
-        'greater-than': 50,
-        'less-than'   : 100
+        'greater-than': 70,
+        'less-than'   : 95
       }
     },
     drawColor: `#22a9ff`,
     color: {
       red: {
         'greater-than': 0,
-        'less-than': 100
+        'less-than'   : 100
       },
       green: {
         'greater-than': 100,
-        'less-than': 180
+        'less-than'   : 200
       },
       blue: {
         'greater-than': 200
@@ -114,23 +114,23 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Rectangle`,
     size: {
       width: {
-        'greater-than': 150,
-        'less-than'   : 250
+        'greater-than': 100,
+        'less-than'   : 125
       },
       height: {
         'greater-than': 50,
-        'less-than'   : 100
+        'less-than'   : 75
       }
     },
     drawColor: `#22a9ff`,
     color: {
       red: {
         'greater-than': 0,
-        'less-than': 100
+        'less-than'   : 100
       },
       green: {
         'greater-than': 100,
-        'less-than': 180
+        'less-than'   : 200
       },
       blue: {
         'greater-than': 200
@@ -144,27 +144,25 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Square`,
     size: {
       width: {
-        'greater-than': 120,
-        'less-than'   : 170
+        'greater-than': 65,
+        'less-than'   : 90
       },
       height: {
-        'greater-than': 100,
-        'less-than'   : 150
+        'greater-than': 60,
+        'less-than'   : 80
       }
     },
     drawColor: `#cbd072`,
     color: {
       red: {
-        'greater-than': 160,
-        'less-than': 210
+        'greater-than': 220
       },
       green: {
-        'greater-than': 150,
-        'less-than': 220
+        'greater-than': 200
       },
       blue: {
-        'greater-than': 70,
-        'less-than': 130
+        'greater-than': 130,
+        'less-than'   : 200
       }
     }
   });
@@ -175,27 +173,25 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Rectangle`,
     size: {
       width: {
-        'greater-than': 250,
-        'less-than'   : 300
+        'greater-than': 120,
+        'less-than'   : 170
       },
       height: {
-        'greater-than': 100,
-        'less-than'   : 150
+        'greater-than': 50,
+        'less-than'   : 85
       }
     },
     drawColor: `#cbd072`,
     color: {
       red: {
-        'greater-than': 160,
-        'less-than': 210
+        'greater-than': 220
       },
       green: {
-        'greater-than': 150,
-        'less-than': 220
+        'greater-than': 200
       },
       blue: {
-        'greater-than': 70,
-        'less-than': 130
+        'greater-than': 130,
+        'less-than'   : 200
       }
     }
   });

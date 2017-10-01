@@ -3,8 +3,15 @@
 // ---------------
 module.exports = ({io}) => {
   return new Promise((resolve) => {
+    let connectedClients = 0;
     io.on(`connection`, () => {
-      console.info(`A socket connected`.cyan);
+      connectedClients++;
+      console.info(`A client connected!`.rainbow);
+    });
+
+    io.on(`disconnect`, () => {
+      connectedClients--;
+      console.info(`A client left!`.red);
     });
 
     // Listen for traffic on the receiving channel
@@ -17,17 +24,14 @@ module.exports = ({io}) => {
 
     // Listen for traffic on the sending channel
     // -----------------------------------------
-    const send = io
-      .of(`/send`)
+    io.of(`/send`)
       .on('connection', function (socket) {
-        console.info(`A socket that sends blocks connected`.yellow)
+        console.info(`A socket that sends blocks connected`.yellow);
         socket.on(`blocks`, function (data) {
-          console.info(`recieved block lines,`.cyan, data.length);
           receive.emit(`blocks`, data);
+          console.info(`sent ${data.length} lines to ${Object.keys(io.sockets.connected).length} clients`.yellow);
         });
       });
-
-
 
     resolve();
   });

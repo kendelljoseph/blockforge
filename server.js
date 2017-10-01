@@ -52,7 +52,7 @@ module.exports = (options = {}) => {
 
       // App options
       // -----------
-      app.use(morgan(`dev`));
+      //app.use(morgan(`tiny`));
       app.use(bodyParser.urlencoded({ extended: false }));
       app.use(bodyParser.json());
 

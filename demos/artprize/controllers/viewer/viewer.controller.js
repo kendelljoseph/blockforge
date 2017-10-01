@@ -1,4 +1,4 @@
-/*globals app*/
+/*globals location, app, io, Blockforge*/
 /*eslint no-console: ["error", { allow: ["info", "error"] }]*/
 app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
   // Boxes
@@ -42,5 +42,19 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
     color: `#eee`
   };
 
-  console.info(`Viewer Loaded...`);
+  // Blockforge Settings
+  // -------------------
+  const blockforgeSettings = {
+    name  : `Art Prize`,
+    socket: io.connect(`${location.origin}/listen`)
+  };
+
+  // Blockforge
+  // ----------
+  const blockforge = new Blockforge(blockforgeSettings);
+  blockforge.on(`blocks`, (data) => {
+    console.info(`recieved blocks`, data);
+  });
+
+  console.info(`Viewer Loaded...`, blockforge);
 }]);

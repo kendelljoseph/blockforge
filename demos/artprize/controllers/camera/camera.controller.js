@@ -1,62 +1,212 @@
-/*globals app, tracking*/
+/*globals app, location, io, tracking, Blockforge*/
 /*eslint no-console: ["error", { allow: ["info", "error"] }]*/
 app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
-  // Set sizing variables
-  // --------------------
-  const topMargin = 78;
-
   // Select elements
   // ---------------
   const video         = document.getElementById(`video`);
   const canvasElement = document.getElementById(`canvas`);
 
-  // Get the canvas to draw on
-  // -------------------------
-  const canvas = canvasElement.getContext(`2d`);
-
-  // Create color checks
+  // Blockforge Settings
   // -------------------
-  const redColorCheck = (red, green, blue) => {
-    if (red > 200 && green < 100 && blue < 100) {
-      return true;
+  const blockforgeSettings = {
+    name  : `Art Prize`,
+    socket: io.connect(`${location.origin}/send`),
+    video : video,
+    canvas: canvasElement,
+    line  : {
+      tolerance: 30
     }
-    return false;
   };
 
-  // Add color checks
-  // ----------------
-  tracking.ColorTracker.registerColor(`red`, redColorCheck);
+  // Blockforge
+  // ----------
+  const blockforge = new Blockforge(blockforgeSettings);
 
-  // Set colors to track
-  // -------------------
-  const colorOptions = [`red`, `magenta`, `cyan`, `yellow`];
-
-  // Setup the block tracker
-  // -----------------------
-  const blockTracker = new tracking.ColorTracker(colorOptions);
-  tracking.track(video, blockTracker, { camera: true });
-
-  // Start tracking blocks
-  // ---------------------
-  blockTracker.on(`track`, (event) => {
-    // Clear the canvas
-    // ----------------
-    canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
-
-    // Add rectanges where blocks are detected
-    // ---------------------------------------
-    event.data.forEach((rectange) => {
-      if (rectange.color === `custom`) {
-        rectange.color = blockTracker.customColor;
+  // Register a red square block
+  // ---------------------------
+  blockforge.register(`red-square-block`, {
+    name: `Square`,
+    size: {
+      width: {
+        'greater-than': 50,
+        'less-than'   : 90
+      },
+      height: {
+        'greater-than': 100,
+        'less-than'   : 200
       }
-      canvas.strokeStyle = rectange.color;
-      canvas.strokeRect(rectange.x, rectange.y, rectange.width, rectange.height);
-      canvas.font = `11px Helvetica`;
-      canvas.fillStyle = `#fff`;
-      canvas.fillText(`x: ` + rectange.x + `px`, rectange.x + rectange.width + 5, rectange.y + 11);
-      canvas.fillText(`y: ` + rectange.y + `px`, rectange.x + rectange.width + 5, rectange.y + 22);
-    });
+    },
+    drawColor: `red`,
+    color: {
+      red: {
+        'greater-than': 100
+      },
+      green: {
+        'less-than': 100
+      },
+      blue: {
+        'less-than': 100
+      }
+    }
   });
+
+  // Register a red rectange block
+  // ---------------------------
+  blockforge.register(`red-rectange-block`, {
+    name: `Rectangle`,
+    size: {
+      width: {
+        'greater-than': 200,
+        'less-than'   : 390
+      },
+      height: {
+        'greater-than': 50,
+        'less-than'   : 90
+      }
+    },
+    drawColor: `#f00`,
+    color: {
+      red: {
+        'greater-than': 100
+      },
+      green: {
+        'less-than': 100
+      },
+      blue: {
+        'less-than': 100
+      }
+    }
+  });
+
+  // Register a blue square block
+  // ---------------------------
+  blockforge.register(`blue-square-block`, {
+    name: `Square`,
+    size: {
+      width: {
+        'greater-than': 100,
+        'less-than'   : 150
+      },
+      height: {
+        'greater-than': 50,
+        'less-than'   : 100
+      }
+    },
+    drawColor: `#22a9ff`,
+    color: {
+      red: {
+        'greater-than': 0,
+        'less-than': 100
+      },
+      green: {
+        'greater-than': 100,
+        'less-than': 180
+      },
+      blue: {
+        'greater-than': 200
+      }
+    }
+  });
+
+  // Register a blue rectange block
+  // ---------------------------
+  blockforge.register(`blue-rectange-block`, {
+    name: `Rectangle`,
+    size: {
+      width: {
+        'greater-than': 150,
+        'less-than'   : 250
+      },
+      height: {
+        'greater-than': 50,
+        'less-than'   : 100
+      }
+    },
+    drawColor: `#22a9ff`,
+    color: {
+      red: {
+        'greater-than': 0,
+        'less-than': 100
+      },
+      green: {
+        'greater-than': 100,
+        'less-than': 180
+      },
+      blue: {
+        'greater-than': 200
+      }
+    }
+  });
+
+  // Register a yellow square block
+  // ------------------------------
+  blockforge.register(`yellow-square-block`, {
+    name: `Square`,
+    size: {
+      width: {
+        'greater-than': 120,
+        'less-than'   : 170
+      },
+      height: {
+        'greater-than': 100,
+        'less-than'   : 150
+      }
+    },
+    drawColor: `#cbd072`,
+    color: {
+      red: {
+        'greater-than': 160,
+        'less-than': 210
+      },
+      green: {
+        'greater-than': 150,
+        'less-than': 220
+      },
+      blue: {
+        'greater-than': 70,
+        'less-than': 130
+      }
+    }
+  });
+
+  // Register a yellow rectangle block
+  // ------------------------------
+  blockforge.register(`yellow-rectangle-block`, {
+    name: `Rectangle`,
+    size: {
+      width: {
+        'greater-than': 250,
+        'less-than'   : 300
+      },
+      height: {
+        'greater-than': 100,
+        'less-than'   : 150
+      }
+    },
+    drawColor: `#cbd072`,
+    color: {
+      red: {
+        'greater-than': 160,
+        'less-than': 210
+      },
+      green: {
+        'greater-than': 150,
+        'less-than': 220
+      },
+      blue: {
+        'greater-than': 70,
+        'less-than': 130
+      }
+    }
+  });
+
+  // Start watching blocks
+  // ---------------------
+  blockforge.watch();
+
+  // Set sizing variables
+  // --------------------
+  const topMargin = 78;
 
   // Resize elements to fit current window size
   // ------------------------------------------

@@ -217,5 +217,4 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
 
   resizeElements();
   window.addEventListener(`resize`, resizeElements);
-  console.info(`Camera Controller Ready...`);
 }]);

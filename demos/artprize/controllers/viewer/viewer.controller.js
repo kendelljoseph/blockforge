@@ -78,7 +78,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
       lines.forEach((block, index) => {
         if((index === 0) && isEqual(`red-square-block`, block))  redSquareLines.push(lines);
         if((index === 0) && isEqual(`blue-square-block`, block)) blueSquareLines.push(lines);
-        if((index === 0) && isEqual(`yellow-square-block`, block)) greenSquareLines.push(lines);
+        if((index === 0) && isEqual(`green-square-block`, block)) greenSquareLines.push(lines);
       });
     });
 
@@ -96,7 +96,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
       $scope.blocks.push({
         position: `${index} 0.26 -4`,
         rotation: `0 0 0`,
-        color   : `#0033ff`
+        color   : `#0033FF`
       });
     });
 
@@ -104,7 +104,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
       $scope.blocks.push({
         position: `-${index + 1} 0.26 -3`,
         rotation: `0 0 0`,
-        color   : `#ffaa33`
+        color   : `#11754b`
       });
     });
 
@@ -135,12 +135,12 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
     });
 
     greenSquareLines.forEach((line, index) => {
-      const twirl = line[1] === `yellow-rectangle-block` ? true : false;
+      const twirl = line[1] === `green-rectangle-block` ? true : false;
       incomingRobots.push({
         text    : (twirl ? `Weeee!` : ``),
         position: `-5.1 0 ${index - 1.5}`,
         twirl   : twirl,
-        color   : `#FFAA33`
+        color   : `#11754B`
       });
     });
 

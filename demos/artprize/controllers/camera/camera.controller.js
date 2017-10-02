@@ -28,12 +28,12 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Square`,
     size: {
       width: {
-        'greater-than': 100,
-        'less-than'   : 150
+        'greater-than': 30,
+        'less-than'   : 60
       },
       height: {
-        'greater-than': 60,
-        'less-than'   : 100
+        'greater-than': 30,
+        'less-than'   : 60
       }
     },
     drawColor: `red`,
@@ -42,10 +42,10 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
         'greater-than': 200
       },
       green: {
-        'less-than': 120
+        'less-than': 100
       },
       blue: {
-        'less-than': 120
+        'less-than': 100
       }
     }
   });
@@ -56,12 +56,12 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Rectangle`,
     size: {
       width: {
-        'greater-than': 200,
-        'less-than'   : 390
+        'greater-than': 60,
+        'less-than'   : 100
       },
       height: {
-        'greater-than': 50,
-        'less-than'   : 90
+        'greater-than': 30,
+        'less-than'   : 60
       }
     },
     drawColor: `#f00`,
@@ -70,10 +70,10 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
         'greater-than': 200
       },
       green: {
-        'less-than': 120
+        'less-than': 100
       },
       blue: {
-        'less-than': 120
+        'less-than': 100
       }
     }
   });
@@ -84,26 +84,24 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Square`,
     size: {
       width: {
-        'greater-than': 50,
-        'less-than'   : 80
+        'greater-than': 30,
+        'less-than'   : 60
       },
       height: {
-        'greater-than': 40,
+        'greater-than': 30,
         'less-than'   : 60
       }
     },
-    drawColor: `#22a9ff`,
+    drawColor: `#1e4aa3`,
     color: {
       red: {
-        'greater-than': 0,
         'less-than'   : 100
       },
       green: {
-        'greater-than': 100,
-        'less-than'   : 200
+        'less-than'   : 100
       },
       blue: {
-        'greater-than': 200
+        'greater-than': 120
       }
     }
   });
@@ -114,82 +112,80 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Rectangle`,
     size: {
       width: {
-        'greater-than': 100,
-        'less-than'   : 125
+        'greater-than': 60,
+        'less-than'   : 100
       },
       height: {
         'greater-than': 30,
-        'less-than'   : 75
+        'less-than'   : 60
       }
     },
-    drawColor: `#22a9ff`,
+    drawColor: `#1e4aa3`,
     color: {
       red: {
-        'greater-than': 0,
         'less-than'   : 100
       },
       green: {
-        'greater-than': 100,
-        'less-than'   : 200
+        'less-than'   : 100
       },
       blue: {
-        'greater-than': 150
+        'greater-than': 120
       }
     }
   });
 
-  // Register a yellow square block
-  // ------------------------------
-  blockforge.register(`yellow-square-block`, {
+  // Register a green square block
+  // -----------------------------
+  blockforge.register(`green-square-block`, {
     name: `Square`,
     size: {
       width: {
-        'greater-than': 65,
-        'less-than'   : 90
+        'greater-than': 30,
+        'less-than'   : 60
       },
       height: {
-        'greater-than': 60,
-        'less-than'   : 80
+        'greater-than': 30,
+        'less-than'   : 60
       }
     },
-    drawColor: `#cbd072`,
+    drawColor: `#11754b`,
     color: {
       red: {
-        'greater-than': 120
+        'less-than': 100
       },
       green: {
-        'greater-than': 100
+        'greater-than': 90
       },
       blue: {
-        'less-than'   : 200
+        'less-than'   : 100
       }
     }
   });
 
-  // Register a yellow rectangle block
+  // Register a green rectangle block
   // ------------------------------
-  blockforge.register(`yellow-rectangle-block`, {
+  blockforge.register(`green-rectangle-block`, {
     name: `Rectangle`,
     size: {
       width: {
-        'greater-than': 120,
-        'less-than'   : 170
+        'greater-than': 60,
+        'less-than'   : 100
       },
       height: {
-        'greater-than': 50,
-        'less-than'   : 85
+        'greater-than': 30,
+        'less-than'   : 60
       }
     },
-    drawColor: `#cbd072`,
+    drawColor: `#11754b`,
     color: {
       red: {
-        'greater-than': 120
+        'less-than': 100
       },
       green: {
-        'greater-than': 100
+        'greater-than': 90
       },
       blue: {
-        'less-than'   : 200
+        'less-than'   : 100
       }
     }
   });

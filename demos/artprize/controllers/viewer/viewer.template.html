@@ -39,12 +39,11 @@
   </a-entity>
 
   <!-- status messages -->
-  <a-text value="{{status}}" color="#329e8c" position="-0.25 1 -1" rotation="0 0 0" scale="0.30 0.30 0.30" ></a-text>
+  <a-text value="{{status}}" color="#329e8c" position="-0.35 1 -1" rotation="0 0 0" scale="0.30 0.30 0.30" ></a-text>
   <a-text value="{{robotStatus}}" color="#329e8c" position="-1 1 0.25" rotation="0 90 0" scale="0.30 0.30 0.30" ></a-text>
-
-  <a-box ng-repeat="box in boxes" position="{{box.position}}" rotation="{{box.rotation}}" color="{{box.color}}" scale="0.5 0.5 0.5" shadow="cast: true; receive: true"></a-box>
-  <a-sphere ng-repeat="sphere in spheres" position="{{sphere.position}}" radius="{{sphere.radius}}" color="{{sphere.color}}" shadow="cast: true; receive: true"></a-sphere>
-  <a-cylinder ng-repeat="cylinder in cylinders" position="{{cylinder.position}}" radius="{{cylinder.radius}}" height="{{cylinder.height}}" color="{{cylinder.color}}" shadow="cast: true; receive: true"></a-cylinder>
+  <a-text value="{{viewers}}" color="#329e8c" position="1 1 -0.5" rotation="0 -90 0" scale="0.30 0.30 0.30" ></a-text>
   <a-plane ng-repeat="plane in planes" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}" shadow="receive: true"></a-plane>
   <a-sky color="{{sky.color}}"></a-sky>
+
+  <a-box ng-repeat="block in blocks" position="{{block.position}}" rotation="{{block.rotation}}" color="{{block.color}}" scale="0.5 0.5 0.5" shadow="cast: true; receive: true"></a-box>
 </a-scene>

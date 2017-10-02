@@ -1,8 +1,9 @@
 /*globals location, app, io, Blockforge*/
 /*eslint no-console: ["error", { allow: ["info", "error"] }]*/
 app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
-  $scope.status      = "Waiting for data...";
-  $scope.robotStatus = "Waiting for data...";
+  $scope.status      = `Waiting for data...`;
+  $scope.robotStatus = `Waiting for data...`;
+  $scope.viewers     = `Waiting for data...`;
 
   // Blocks
   // ------
@@ -34,6 +35,15 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
   // Blockforge
   // ----------
   const blockforge = new Blockforge(blockforgeSettings);
+
+  // Listen for viewers
+  // ------------------
+  blockforge.on(`viewers`, (count) => {
+    $scope.viewers = `There ${count > 1? `are`: `is`} ${count} ${count > 1? `people`: `person`} here right now.`;
+  });
+
+  // Listen for detected blocks
+  // --------------------------
   blockforge.on(`blocks`, (data) => {
     // Total blocks
     // ------------

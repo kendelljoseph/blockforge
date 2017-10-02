@@ -1,10 +1,16 @@
 /*globals location, app, io, Blockforge*/
 /*eslint no-console: ["error", { allow: ["info", "error"] }]*/
 app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
+  // Text
+  // ----
   $scope.status      = `Waiting for data...`;
   $scope.robotStatus = `Waiting for data...`;
   $scope.viewers     = `Waiting for data...`;
   $scope.goodbye     = `Thank you, we hope you had fun!`;
+
+  // Robots
+  // ------
+  $scope.robots = [];
 
   // Blocks
   // ------
@@ -58,11 +64,11 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
     // -------------------------------------------
     const isEqual = (name, compare) => name === compare;
 
-    // A place to store lines
-    // ----------------------
-    const redSquareLines    = [];
-    const blueSquareLines   = [];
-    const yellowSquareLines = [];
+    // A place to store lines of blocks
+    // --------------------------------
+    const redSquareLines   = [];
+    const blueSquareLines  = [];
+    const greenSquareLines = [];
 
     // Find lines
     // ----------
@@ -72,7 +78,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
       lines.forEach((block, index) => {
         if((index === 0) && isEqual(`red-square-block`, block))  redSquareLines.push(lines);
         if((index === 0) && isEqual(`blue-square-block`, block)) blueSquareLines.push(lines);
-        if((index === 0) && isEqual(`yellow-square-block`, block)) yellowSquareLines.push(lines);
+        if((index === 0) && isEqual(`yellow-square-block`, block)) greenSquareLines.push(lines);
       });
     });
 
@@ -80,7 +86,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
     // ----------------
     redSquareLines.forEach((line, index) => {
       $scope.blocks.push({
-        position: `${index} 0.5 -3`,
+        position: `${index} 0.26 -3`,
         rotation: `0 0 0`,
         color   : `#FF3333`
       });
@@ -88,15 +94,15 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
 
     blueSquareLines.forEach((line, index) => {
       $scope.blocks.push({
-        position: `${index} 1.25 -3`,
+        position: `${index} 0.26 -4`,
         rotation: `0 0 0`,
         color   : `#0033ff`
       });
     });
 
-    yellowSquareLines.forEach((line, index) => {
+    greenSquareLines.forEach((line, index) => {
       $scope.blocks.push({
-        position: `-${index + 1} 0.5 -3`,
+        position: `-${index + 1} 0.26 -3`,
         rotation: `0 0 0`,
         color   : `#ffaa33`
       });

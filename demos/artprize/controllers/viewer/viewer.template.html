@@ -25,12 +25,12 @@
   <a-image src="#poster4" position="6 8 0" rotation="23 -90 0" width="8" height="10"></a-image>
 
   <!-- Robots -->
-  <a-entity position="-3.1 0 0">
-    <a-text value="A Robot" color="#ffaa33" position="0 1.5 0.18" rotation="0 90 0" scale="0.5 0.5 0.5" ></a-text>
+  <a-entity ng-repeat="robot in robots" position="{{robot.position}}" rotation="0 0 0">
+    <a-text value="{{robot.text}}" color="{{robot.color}}" position="0 1.5 0.18" rotation="0 90 0" scale="0.5 0.5 0.5" ></a-text>
     <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" shadow="cast: true; receive: true"></a-collada-model>
-    <a-cylinder position="0 0.1 0" radius="0.4" height="0.1" color="#ffaa33" shadow="cast: true; receive: true"></a-cylinder>
-    <a-animation attribute="rotation"
-       dur="4000"
+    <a-cylinder position="0 0.1 0" radius="0.4" height="0.1" color="{{robot.color}}" shadow="cast: true; receive: true"></a-cylinder>
+    <a-animation ng-if="robot.twirl" attribute="rotation"
+       dur="800"
        fill="forwards"
        to="0 360 0"
        easing="ease-in-out"

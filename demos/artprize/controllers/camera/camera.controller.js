@@ -50,9 +50,9 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     }
   });
 
-  // Register a red rectange block
+  // Register a red rectangle block
   // ---------------------------
-  blockforge.register(`red-rectange-block`, {
+  blockforge.register(`red-rectangle-block`, {
     name: `Rectangle`,
     size: {
       width: {
@@ -84,12 +84,12 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     name: `Square`,
     size: {
       width: {
-        'greater-than': 80,
-        'less-than'   : 100
+        'greater-than': 50,
+        'less-than'   : 80
       },
       height: {
-        'greater-than': 70,
-        'less-than'   : 95
+        'greater-than': 40,
+        'less-than'   : 60
       }
     },
     drawColor: `#22a9ff`,
@@ -108,9 +108,9 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     }
   });
 
-  // Register a blue rectange block
+  // Register a blue rectangle block
   // ---------------------------
-  blockforge.register(`blue-rectange-block`, {
+  blockforge.register(`blue-rectangle-block`, {
     name: `Rectangle`,
     size: {
       width: {
@@ -118,7 +118,7 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
         'less-than'   : 125
       },
       height: {
-        'greater-than': 50,
+        'greater-than': 30,
         'less-than'   : 75
       }
     },

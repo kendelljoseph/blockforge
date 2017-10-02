@@ -59,7 +59,6 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
     // Clear previous values
     // ---------------------
     $scope.blocks = [];
-    $scope.robots = [];
 
     // Compare two values to see if they are equal
     // -------------------------------------------
@@ -109,11 +108,15 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
       });
     });
 
+    // Store incoming robots here
+    // --------------------------
+    let incomingRobots = [];
+
     // Updated displayed robots
     // ------------------------
     redSquareLines.forEach((line, index) => {
       const twirl = line[1] === `red-rectangle-block` ? true : false;
-      $scope.robots.push({
+      incomingRobots.push({
         text    : (twirl ? `Weeee!` : ``),
         position: `-3.1 0 ${index - 1.5}`,
         twirl   : twirl,
@@ -123,7 +126,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
 
     blueSquareLines.forEach((line, index) => {
       const twirl = line[1] === `blue-rectangle-block` ? true : false;
-      $scope.robots.push({
+      incomingRobots.push({
         text    : twirl ? `Weeee!` : ``,
         position: `-4.1 0 ${index - 1.5}`,
         twirl   : twirl,
@@ -133,12 +136,69 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
 
     greenSquareLines.forEach((line, index) => {
       const twirl = line[1] === `yellow-rectangle-block` ? true : false;
-      $scope.robots.push({
+      incomingRobots.push({
         text    : (twirl ? `Weeee!` : ``),
         position: `-5.1 0 ${index - 1.5}`,
         twirl   : twirl,
         color   : `#FFAA33`
       });
+    });
+
+    // Find any robots that changed
+    // ----------------------------
+    const changedRobotSet = $scope.robots.filter((robot) => {
+      return incomingRobots.find((incomingRobot) => {
+        let robot1 = Object.assign({}, robot);
+        let robot2 = Object.assign({}, incomingRobot);
+        delete robot1[`$$hashKey`];
+        delete robot2[`$$hashKey`];
+
+        return JSON.stringify(robot1) === JSON.stringify(robot2);
+      });
+    });
+
+    // Update the robots if there are more than before
+    // -----------------------------------------------
+    if(changedRobotSet.length != $scope.robots.length) {
+      $scope.robots = changedRobotSet;
+
+    // Update the robots if any of the changed ones are new
+    // ----------------------------------------------------
+    } else {
+      let hasNew = false;
+      changedRobotSet.forEach((robot) => {
+        if(hasNew) return;
+
+        const newRobot = $scope.robots.find((newRobot) => {
+          let robot1 = Object.assign({}, robot);
+          let robot2 = Object.assign({}, newRobot);
+          delete robot1[`$$hashKey`];
+          delete robot2[`$$hashKey`];
+
+          return JSON.stringify(robot1) != JSON.stringify(robot2);
+        });
+
+        if(newRobot){
+          hasNew = true;
+        }
+      });
+
+      if(hasNew) $scope.robots = changedRobotSet;
+    }
+
+    // Add incoming robots if they do not already exist
+    // ------------------------------------------------
+    incomingRobots.forEach((robot) => {
+      const existingRobot = $scope.robots.find((existingRobot) => {
+        let robot1 = Object.assign({}, robot);
+        let robot2 = Object.assign({}, existingRobot);
+        delete robot1[`$$hashKey`];
+        delete robot2[`$$hashKey`];
+
+        return JSON.stringify(robot1) === JSON.stringify(robot2);
+      });
+
+      if(!existingRobot) $scope.robots.push(robot);
     });
 
     // Update the status messages

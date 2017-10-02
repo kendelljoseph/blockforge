@@ -1,4 +1,4 @@
-<a-scene fog="type: linear; color: #000; near: 3; far: 15;">
+<a-scene fog="type: linear; color: #329e8c; near: 5; far: 25;">
   <a-assets>
     <!-- Images -->
     <img id="poster1" src="images/poster_1.png">
@@ -30,7 +30,7 @@
     <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" shadow="cast: true; receive: true"></a-collada-model>
     <a-cylinder position="0 0.1 0" radius="0.4" height="0.1" color="{{robot.color}}" shadow="cast: true; receive: true"></a-cylinder>
     <a-animation ng-if="robot.twirl" attribute="rotation"
-       dur="800"
+       dur="1200"
        fill="forwards"
        to="0 360 0"
        easing="ease-in-out"
@@ -46,6 +46,16 @@
   <!-- Static items -->
   <a-plane ng-repeat="plane in planes" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}" shadow="receive: true"></a-plane>
   <a-sky color="{{sky.color}}"></a-sky>
+
+  <!-- Gifs -->
+  <a-entity position="1 1 2.89" rotation="0 180 0">
+    <a-entity position="0 1 0"geometry="primitive:plane" material="shader:gif;src:url(images/size_detect.gif);" gif=""></a-entity>
+    <a-entity position="1 1 0"geometry="primitive:plane" material="shader:gif;src:url(images/red_detect.gif);" gif=""></a-entity>
+    <a-entity position="2 1 0"geometry="primitive:plane" material="shader:gif;src:url(images/cyan_detect.gif);" gif=""></a-entity>
+    <a-entity position="0 0 0"geometry="primitive:plane" material="shader:gif;src:url(images/multiple_shapes.gif);" gif=""></a-entity>
+    <a-entity position="1 0 0"geometry="primitive:plane" material="shader:gif;src:url(images/many_kinds.gif);" gif=""></a-entity>
+    <a-entity position="2 0 0"geometry="primitive:plane" material="shader:gif;src:url(images/line_indexes.gif);" gif=""></a-entity>
+  </a-entity>
 
   <a-box ng-repeat="block in blocks" position="{{block.position}}" rotation="{{block.rotation}}" color="{{block.color}}" scale="0.5 0.5 0.5" shadow="cast: true; receive: true"></a-box>
 </a-scene>

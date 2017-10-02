@@ -3,9 +3,11 @@
     <!-- Images -->
     <img id="poster1" src="images/poster_1.png">
     <img id="poster2" src="images/poster_2.png">
+    <img id="poster3" src="images/poster_3.png">
+    <img id="poster4" src="images/poster_4.png">
 
     <!-- Models -->
-    <a-asset-item id="cat" src="models/cat_obj.dae"></a-asset-item>
+    <a-asset-item id="robot" src="models/robot.dae"></a-asset-item>
   </a-assets>
 
   <!-- Camera -->
@@ -18,14 +20,27 @@
 
   <!-- Posters -->
   <a-image src="#poster1" position="0 8 -6" rotation="23 0 0" width="8" height="10"></a-image>
-  <a-image src="#poster2" position="-6 8 0" rotation="23 90 0" width="8" height="10"></a-image>
+  <a-image src="#poster2" position="0 8 6" rotation="23 180 0" width="8" height="10"></a-image>
+  <a-image src="#poster3" position="-6 8 0" rotation="23 90 0" width="8" height="10"></a-image>
+  <a-image src="#poster4" position="6 8 0" rotation="23 -90 0" width="8" height="10"></a-image>
 
-  <!-- Models -->
-  <a-text value="Meow..." position="-2 1 0" rotation="0 90 0" scale="0.35 0.35 0.35" ></a-text>
-  <a-collada-model src="#cat" position="-2 0 0" rotation="0 40 0" scale="0.25 0.25 0.25" shadow="cast: true; receive: true"></a-collada-model>
+  <!-- Robot -->
+
+  <a-entity position="-3.1 0 0">
+    <a-text value="Robot 1" color="red" position="0 1.5 0.17" rotation="0 90 0" scale="0.5 0.5 0.5" ></a-text>
+    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" shadow="cast: true; receive: true"></a-collada-model>
+    <a-cylinder position="0 0.1 0" radius="0.4" height="0.1" color="red" shadow="cast: true; receive: true"></a-cylinder>
+    <a-animation attribute="rotation"
+       dur="4000"
+       fill="forwards"
+       to="0 360 0"
+       easing="ease-in-out"
+       repeat="indefinite"></a-animation>
+  </a-entity>
 
   <!-- status messages -->
-  <a-text value="{{status}}" position="-0.25 1 -1" rotation="0 0 0" scale="0.30 0.30 0.30" ></a-text>
+  <a-text value="{{status}}" color="#329e8c" position="-0.25 1 -1" rotation="0 0 0" scale="0.30 0.30 0.30" ></a-text>
+  <a-text value="{{robotStatus}}" color="#329e8c" position="-1 1 0.25" rotation="0 90 0" scale="0.30 0.30 0.30" ></a-text>
 
   <a-box ng-repeat="box in boxes" position="{{box.position}}" rotation="{{box.rotation}}" color="{{box.color}}" scale="0.5 0.5 0.5" shadow="cast: true; receive: true"></a-box>
   <a-sphere ng-repeat="sphere in spheres" position="{{sphere.position}}" radius="{{sphere.radius}}" color="{{sphere.color}}" shadow="cast: true; receive: true"></a-sphere>

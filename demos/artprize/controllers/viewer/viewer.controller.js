@@ -1,19 +1,12 @@
 /*globals location, app, io, Blockforge*/
 /*eslint no-console: ["error", { allow: ["info", "error"] }]*/
 app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
-  $scope.status = "Waiting for data...";
+  $scope.status      = "Waiting for data...";
+  $scope.robotStatus = "Waiting for data...";
 
-  // Boxes
-  // -----
-  $scope.boxes = [];
-
-  // Spheres
-  // -------
-  $scope.spheres = [];
-
-  // Cylinder
-  // --------
-  $scope.cylinders = [];
+  // Blocks
+  // ------
+  $scope.blocks = [];
 
   // Plane
   // -----
@@ -48,9 +41,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
 
     // Clear previous values
     // ---------------------
-    $scope.boxes     = [];
-    $scope.cylinders = [];
-    $scope.spheres   = [];
+    $scope.blocks     = [];
 
     // Compare two values to see if they are equal
     // -------------------------------------------
@@ -77,7 +68,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
     // Update VR blocks
     // ----------------
     redSquareLines.forEach((line, index) => {
-      $scope.boxes.push({
+      $scope.blocks.push({
         position: `${index} 0.5 -3`,
         rotation: `0 0 0`,
         color   : `#FF3333`
@@ -85,7 +76,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
     });
 
     blueSquareLines.forEach((line, index) => {
-      $scope.boxes.push({
+      $scope.blocks.push({
         position: `${index} 1.25 -3`,
         rotation: `0 0 0`,
         color   : `#0033ff`
@@ -93,15 +84,17 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
     });
 
     yellowSquareLines.forEach((line, index) => {
-      $scope.boxes.push({
-        position: `${index} 2.5 -3`,
+      $scope.blocks.push({
+        position: `-${index + 1} 0.5 -3`,
         rotation: `0 0 0`,
         color   : `#ffaa33`
       });
     });
 
-    // Update the status message
-    $scope.status = `detected ${data.length} lines, ${totalBlocks} blocks`;
+    // Update the status messages
+    // --------------------------
+    $scope.status      = `detected ${data.length} lines, ${totalBlocks} blocks`;
+    $scope.robotStatus = `created ${data.length} robots`;
 
     // Update the scope
     // ----------------

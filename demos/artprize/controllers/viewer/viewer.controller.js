@@ -21,9 +21,33 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
   $scope.planes = [{
     position: `0 0 0`,
     rotation: `-90 0 0`,
-    width   : `100`,
-    height  : `100`,
-    color   : `#222`
+    width   : `20`,
+    height  : `20`,
+    color   : `#fff`
+  }, {
+    position: `0 10 -10`,
+    rotation: `0 0 0`,
+    width   : `20`,
+    height  : `20`,
+    color   : `#fff`
+  }, {
+    position: `-10 10 0`,
+    rotation: `0 90 0`,
+    width   : `20`,
+    height  : `20`,
+    color   : `#fff`
+  }, {
+    position: `0 10 10`,
+    rotation: `0 180 0`,
+    width   : `20`,
+    height  : `20`,
+    color   : `#fff`
+  }, {
+    position: `10 10 0`,
+    rotation: `0 -90 0`,
+    width   : `20`,
+    height  : `20`,
+    color   : `#fff`
   }];
 
   // Sky

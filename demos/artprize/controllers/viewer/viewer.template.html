@@ -1,10 +1,11 @@
-<a-scene fog="type: linear; color: #329e8c; near: 5; far: 25;">
+<a-scene fog="type: linear; color: #000; near: 5; far: 15;">
   <a-assets>
     <!-- Images -->
     <img id="poster1" src="images/poster_1.png">
     <img id="poster2" src="images/poster_2.png">
     <img id="poster3" src="images/poster_3.png">
     <img id="poster4" src="images/poster_4.png">
+    <img id="floor" src="images/block_floor.jpg">
 
     <!-- Models -->
     <a-asset-item id="robot" src="models/robot.dae"></a-asset-item>
@@ -17,6 +18,7 @@
   <a-entity light="type:directional; castShadow:true; color:#777;" position="0 0.5 0.15"></a-entity>
   <a-entity light="type:directional; castShadow:true; color:#555;" position="0.15 0.5 0"></a-entity>
   <a-entity light="type:directional; color:#111;" position="0.1 -0.5 0"></a-entity>
+  <a-entity light="type:directional; color:#111;" position="-1 -0.8 -1"></a-entity>
 
   <!-- Posters -->
   <a-image src="#poster1" position="0 8 -6" rotation="23 0 0" width="8" height="10"></a-image>
@@ -29,6 +31,8 @@
     <a-text value="{{robot.text}}" color="{{robot.color}}" position="0 1.5 0.18" rotation="0 90 0" scale="0.5 0.5 0.5" ></a-text>
     <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" shadow="cast: true; receive: true"></a-collada-model>
     <a-cylinder position="0 0.1 0" radius="0.4" height="0.1" color="{{robot.color}}" shadow="cast: true; receive: true"></a-cylinder>
+    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="{{robot.color}}" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
+    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="{{robot.color}}" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
     <a-animation ng-if="robot.twirl" attribute="rotation"
        dur="1200"
        fill="forwards"
@@ -44,7 +48,7 @@
   <a-text value="{{goodbye}}" color="#329e8c" position="0.35 1 1" rotation="0 180 0" scale="0.30 0.30 0.30" ></a-text>
 
   <!-- Static items -->
-  <a-plane ng-repeat="plane in planes" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}" shadow="receive: true"></a-plane>
+  <a-plane ng-repeat="plane in planes" material="src:#floor; repeat: 5 5" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}" shadow="receive: true"></a-plane>
   <a-sky color="{{sky.color}}"></a-sky>
 
   <!-- Gifs -->

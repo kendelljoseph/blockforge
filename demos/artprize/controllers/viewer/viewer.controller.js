@@ -4,6 +4,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
   $scope.status      = `Waiting for data...`;
   $scope.robotStatus = `Waiting for data...`;
   $scope.viewers     = `Waiting for data...`;
+  $scope.goodbye     = `Thank you, we hope you had fun!`;
 
   // Blocks
   // ------

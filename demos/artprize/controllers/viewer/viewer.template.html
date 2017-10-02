@@ -42,6 +42,9 @@
   <a-text value="{{status}}" color="#329e8c" position="-0.35 1 -1" rotation="0 0 0" scale="0.30 0.30 0.30" ></a-text>
   <a-text value="{{robotStatus}}" color="#329e8c" position="-1 1 0.25" rotation="0 90 0" scale="0.30 0.30 0.30" ></a-text>
   <a-text value="{{viewers}}" color="#329e8c" position="1 1 -0.5" rotation="0 -90 0" scale="0.30 0.30 0.30" ></a-text>
+  <a-text value="{{goodbye}}" color="#329e8c" position="0.45 1 1" rotation="0 180 0" scale="0.30 0.30 0.30" ></a-text>
+
+  <!-- Static items -->
   <a-plane ng-repeat="plane in planes" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}" shadow="receive: true"></a-plane>
   <a-sky color="{{sky.color}}"></a-sky>
 

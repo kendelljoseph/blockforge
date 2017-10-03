@@ -3,8 +3,8 @@
 app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
   // Text
   // ----
-  $scope.status      = `Waiting for camera...`;
-  $scope.robotStatus = `Waiting for camera...`;
+  $scope.status      = `Waiting for a camera...`;
+  $scope.robotStatus = `Waiting for a camera...`;
   $scope.viewers     = `Waiting for data...`;
   $scope.goodbye     = `The development process.`;
 

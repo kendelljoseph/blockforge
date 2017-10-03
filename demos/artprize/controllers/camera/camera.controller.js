@@ -101,7 +101,7 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
         'less-than'   : 160
       },
       blue: {
-        'greater-than': 190
+        'greater-than': 130
       }
     }
   });
@@ -126,10 +126,10 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
         'less-than'   : 100
       },
       green: {
-        'less-than'   : 160
+        'less-than'   : 190
       },
       blue: {
-        'greater-than': 190
+        'greater-than': 130
       }
     }
   });

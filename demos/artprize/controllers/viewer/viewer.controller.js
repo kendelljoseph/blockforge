@@ -8,6 +8,9 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
   $scope.viewers     = `Waiting for data...`;
   $scope.goodbye     = `The development process.`;
 
+  // Viewer count
+  $scope.viewerCount = [];
+
   // Robots
   // ------
   $scope.robots = [];
@@ -71,6 +74,19 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
   // ------------------
   blockforge.on(`viewers`, (count) => {
     $scope.viewers = `There ${count > 1? `are`: `is`} ${count} ${count > 1? `people`: `person`} here right now.`;
+
+    if(count === $scope.viewerCount.length) return;
+    $scope.viewerCount = [];
+    const textOptions  = [`Hello!`, `Hi!`, `Beep!`, `Boop!`, `Hiya!`, `La la la`];
+
+    for(let i=0; i < count; i++){
+      let text = textOptions[Math.floor(Math.random() * textOptions.length)];
+      $scope.viewerCount.push({
+        text: `${text}`,
+        position: `${(Math.random() * 3) + 3} -0.1.5 ${Math.random() > 0.5 ? `-`: ``}${Math.random() * 4}`,
+        rotation: `0 ${Math.random() * 360} 0`
+      });
+    }
   });
 
   // Listen for detected blocks

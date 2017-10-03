@@ -28,6 +28,13 @@ module.exports = ({io}) => {
       .on('connection', function (socket) {
         receive.emit(`viewers`, connectedClients);
         console.info(`A socket that recieves blocks connected`.cyan);
+
+        // Return the viewers when requested
+        // ---------------------------------
+        socket.on(`viewers`, () => {
+          console.log('got a viewer request')
+          receive.emit(`viewers`, connectedClients);
+        });
       });
 
     // Listen for traffic on the sending channel

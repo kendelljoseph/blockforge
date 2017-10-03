@@ -65,6 +65,13 @@ class Blockforge {
     this.socket.on(event, handler);
   }
 
+  // Trigger events
+  // --------------
+  trigger(event, data = {}) {
+    if(!event || !event.length) throw Error({message: `Event trigger is missing a name`});
+    this.socket.emit(event, data);
+  }
+
   // Get size check
   // ---------------
   getSizeCheck(dimentions) {

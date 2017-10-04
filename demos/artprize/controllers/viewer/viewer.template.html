@@ -15,10 +15,14 @@
   <a-entity camera="userHeight: 1.6" look-controls></a-entity>
 
   <!-- Lights -->
-  <a-entity light="type:directional; castShadow:true; color:#777;" position="0 0.5 0.15"></a-entity>
-  <a-entity light="type:directional; castShadow:true; color:#555;" position="0.15 0.5 0"></a-entity>
+  <a-entity light="type:directional; color:#777;" position="0 0.5 0.15"></a-entity>
+  <a-entity light="type:directional; color:#555;" position="0.15 0.5 0"></a-entity>
   <a-entity light="type:directional; color:#111;" position="0.1 -0.5 0"></a-entity>
-  <a-entity light="type:directional; color:#111;" position="-1 -0.8 -1"></a-entity>
+  <a-entity light="type:directional; color:#444;" position="-1 -0.8 -1"></a-entity>
+  <a-entity light="type:point; color:#fff; intensity: 2.0; distance: 25; decay: 5" position="-2 12 -4"></a-entity>
+  <a-entity light="type:point; color:#fff; intensity: 1.0; distance: 25; decay: 5" position="0 2 -8"></a-entity>
+  <a-entity light="type:point; color:#fff; intensity: 1.0; distance: 25; decay: 5" position="-8 2 0"></a-entity>
+  <a-entity light="type:point; color:#fff; intensity: 1.0; distance: 25; decay: 5" position="8 2 0"></a-entity>
 
   <!-- Posters -->
   <a-image src="#poster1" position="0 8 -6" rotation="23 0 0" width="8" height="10"></a-image>
@@ -29,10 +33,10 @@
   <!-- Robots -->
   <a-entity ng-repeat="robot in robots" position="{{robot.position}}" rotation="0 0 0">
     <a-text value="{{robot.text}}" color="{{robot.color}}" position="0 1.5 0.18" rotation="0 90 0" scale="0.5 0.5 0.5" ></a-text>
-    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" shadow="cast: true; receive: true"></a-collada-model>
-    <a-cylinder position="0 0.1 0" radius="0.4" height="0.1" color="{{robot.color}}" shadow="cast: true; receive: true"></a-cylinder>
-    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="{{robot.color}}" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
-    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="{{robot.color}}" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
+    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" ></a-collada-model>
+    <a-cylinder position="0 0.1 0" radius="0.4" height="0.1" color="{{robot.color}}" ></a-cylinder>
+    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="{{robot.color}}" scale="0.05 0.05 0.05" ></a-cylinder>
+    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="{{robot.color}}" scale="0.05 0.05 0.05" ></a-cylinder>
     <a-animation ng-if="robot.twirl" attribute="rotation"
        dur="1200"
        fill="forwards"
@@ -43,25 +47,37 @@
 
   <!-- Static Robots -->
   <a-entity position="-1.45 1 3.2" rotation="-20 50 -5">
-    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" shadow="cast: true; receive: true"></a-collada-model>
+    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2"></a-collada-model>
     <a-text value="The code!" color="#aaa" position="0 1.5 0.18" rotation="0 90 0" scale="0.5 0.5 0.5" ></a-text>
-    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
-    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
+    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05"></a-cylinder>
+    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05"></a-cylinder>
   </a-entity>
   <a-entity position="1.5 1.5 3.3" rotation="20 90 -20">
-    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" shadow="cast: true; receive: true"></a-collada-model>
+    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2"></a-collada-model>
     <a-text value="We want!" color="#aaa" position="0 1.5 0.18" rotation="0 90 0" scale="0.5 0.5 0.5" ></a-text>
-    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
-    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
+    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05"></a-cylinder>
+    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05"></a-cylinder>
+  </a-entity>
+  <a-entity position="-2.5 13 -4.8" rotation="0 45 0">
+    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2"></a-collada-model>
+    <a-text value="Hello, World!" color="#aaa" position="0 1.5 0.5" rotation="0 90 0" scale="1 1 1" ></a-text>
+    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05"></a-cylinder>
+    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05"></a-cylinder>
+    <a-animation attribute="rotation"
+     dur="3000"
+     from="0 -90 -50"
+     to="0 -70 -40"
+     direction="alternate"
+     repeat="indefinite"></a-animation>
   </a-entity>
 
   <!-- Viewer Robots -->
   <a-entity ng-repeat="viewer in viewerCount" position="{{viewer.position}}" rotation="{{viewer.rotation}}">
     <a-text value="{{viewer.text}}" color="#aaa" position="0 1.5 0.18" rotation="0 90 0" scale="0.5 0.5 0.5" ></a-text>
     <a-text value="{{viewer.text}}" color="#aaa" position="0 1.5 -0.18" rotation="0 -90 0" scale="0.5 0.5 0.5" ></a-text>
-    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2" shadow="cast: true; receive: true"></a-collada-model>
-    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
-    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05" shadow="cast: true; receive: true"></a-cylinder>
+    <a-collada-model src="#robot" position="0 0.16 0" rotation="0 90 0" scale="0.2 0.2 0.2"></a-collada-model>
+    <a-cylinder position="0.12 1.09 0.06" rotation="0 -20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05"></a-cylinder>
+    <a-cylinder position="0.12 1.09 -0.06" rotation="0 20 90" radius="0.5" height="0.125" color="#333" scale="0.05 0.05 0.05"></a-cylinder>
   </a-entity>
 
   <!-- status messages -->
@@ -71,7 +87,7 @@
   <a-text value="{{goodbye}}" color="#329e8c" position="0.35 1 1" rotation="0 180 0" scale="0.30 0.30 0.30" ></a-text>
 
   <!-- Static items -->
-  <a-plane ng-repeat="plane in planes" material="src:#floor; repeat: 5 5" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}" shadow="receive: true"></a-plane>
+  <a-plane ng-repeat="plane in planes" material="src:#floor; repeat: 5 5; roughness:1;" position="{{plane.position}}" rotation="{{plane.rotation}}" width="{{plane.width}}" height="{{plane.height}}" color="{{plane.color}}"></a-plane>
   <a-sky color="{{sky.color}}"></a-sky>
 
   <!-- Gifs -->
@@ -84,5 +100,5 @@
     <a-entity position="2 0 0"geometry="primitive:plane" material="shader:gif;src:url(images/line_indexes.gif);" gif=""></a-entity>
   </a-entity>
 
-  <a-box ng-repeat="block in blocks" position="{{block.position}}" rotation="{{block.rotation}}" color="{{block.color}}" scale="0.5 0.5 0.5" shadow="cast: true; receive: true"></a-box>
+  <a-box ng-repeat="block in blocks" position="{{block.position}}" rotation="{{block.rotation}}" color="{{block.color}}" scale="0.5 0.5 0.5"></a-box>
 </a-scene>

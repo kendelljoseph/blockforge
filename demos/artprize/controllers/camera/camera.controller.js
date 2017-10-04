@@ -39,7 +39,7 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     drawColor: `red`,
     color: {
       red: {
-        'greater-than': 200
+        'greater-than': 150
       },
       green: {
         'less-than': 100
@@ -67,7 +67,7 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
     drawColor: `#f00`,
     color: {
       red: {
-        'greater-than': 200
+        'greater-than': 150
       },
       green: {
         'less-than': 100

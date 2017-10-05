@@ -196,7 +196,7 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
 
   // Set sizing variables
   // --------------------
-  const topMargin = 78;
+  const topMargin = 90;
 
   // Resize elements to fit current window size
   // ------------------------------------------

@@ -9,12 +9,17 @@
 #video {
   z-index: 999;
   opacity: 1;
-  top    : 78px;
+  top    : 90px;
   left   : 0;
+  background: #000;
 }
 
 #canvas {
   z-index: 9999;
   box-sizing: border-box;
   background: transparent;
+}
+
+demo-content {
+
 }

@@ -76,6 +76,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
 
     $scope.viewers = `There ${count > 1? `are`: `is`} ${count} ${count > 1? `people`: `person`} here right now.`;
     if(count === $scope.viewerCount.length) return;
+    /*
     $scope.viewerCount = [];
     const textOptions  = [`Hello!`, `Hi!`, `Beep!`, `Boop!`, `Hiya!`, `La la la`];
 
@@ -87,7 +88,7 @@ app.controller(`blockforgeViewer`, [`$scope`, `constants`, function($scope){
         rotation: `0 ${Math.random() * 360} 0`
       });
     }
-
+*/
     // Apply the changes the scope
     $scope.$apply();
   });

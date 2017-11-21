@@ -16,7 +16,7 @@
 | --- | --- | --- |
 | [App](https://blockforge-workspace-kendelljoseph.c9users.io) | Trying it out | A running version of the app. |
 | [Stories](https://www.pivotaltracker.com/n/projects/2078579) | Project Management | Up to minute tasks, goals, objectives and **assignments** can be found here. <br /> --- *You can learn about the planning proccess through this* **[youtube video](https://youtu.be/bzCZysm5lG8)**.|
-| [Editor](https://ide.c9.io/kendelljoseph/blockforge)️ | Editing Code | A real time online collaborative editor. <br /> --- *You can learn more about editing code through our online environemnt in this* **[youtube video](https://youtu.be/UX0mqLVlauk)**.|
+| [Editor](https://ide.c9.io/kendelljoseph/blockforge)️ | Editing Code | A real time online collaborative editor. <br /> --- *You can learn more about editing code through our online environment in this* **[youtube video](https://youtu.be/UX0mqLVlauk)**.|
 | [Texting](https://discord.gg/uZ2Bn6P) | Communicating | A collaborative **text** communicating service. <br /> --- *You can learn about the service in this* **[youtube video](https://youtu.be/E7xznRGg9WM)**. <br />```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle |
 | [Speaking](https://discord.gg/8tQuaXK) | Communicating | A collaborative **voice** communicating service. <br /> --- *You can learn about the service in this* **[youtube video](https://youtu.be/E7xznRGg9WM)**. <br /> ```Moderated Monday through Friday 9:00am to 4:00pm (EST)``` <br /> **Moderators:** Altereagle|
 

@@ -54,4 +54,3 @@
 | Kendell Joseph | Concept, Development, Project Management, UX, sharing the love. |
 | Craig Burgess | Support, Artwork |
 | [Treefort](http://treefort.me/) | Support |
-| [![elevator up](http://elevatorup.com/img/eulogo-87259dc5.png)](http://elevatorup.com/) | Support, Project Guidance |

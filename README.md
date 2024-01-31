@@ -55,11 +55,3 @@
 | Craig Burgess | Support, Artwork |
 | [Treefort](http://treefort.me/) | Support |
 | [![elevator up](http://elevatorup.com/img/eulogo-87259dc5.png)](http://elevatorup.com/) | Support, Project Guidance |
-
-## Cost
-- This application is free, and always will be! But for *education* and *fun*, here is about how much it has "cost" to plan, organize, and develop this product.
-
-| date | value |
-| --- | --- |
-| 7/27/2017 | $900 |
-| 8/16/2017 | $3900|

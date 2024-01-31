@@ -1,62 +1,202 @@
-/*globals app, tracking*/
+/*globals app, location, io, tracking, Blockforge*/
 /*eslint no-console: ["error", { allow: ["info", "error"] }]*/
 app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
-  // Set sizing variables
-  // --------------------
-  const topMargin = 78;
-
   // Select elements
   // ---------------
   const video         = document.getElementById(`video`);
   const canvasElement = document.getElementById(`canvas`);
 
-  // Get the canvas to draw on
-  // -------------------------
-  const canvas = canvasElement.getContext(`2d`);
-
-  // Create color checks
+  // Blockforge Settings
   // -------------------
-  const redColorCheck = (red, green, blue) => {
-    if (red > 200 && green < 100 && blue < 100) {
-      return true;
+  const blockforgeSettings = {
+    name  : `Art Prize`,
+    socket: io.connect(`${location.origin}/send`),
+    video : video,
+    canvas: canvasElement,
+    line  : {
+      tolerance: 30
     }
-    return false;
   };
 
-  // Add color checks
-  // ----------------
-  tracking.ColorTracker.registerColor(`red`, redColorCheck);
+  // Blockforge
+  // ----------
+  const blockforge = new Blockforge(blockforgeSettings);
 
-  // Set colors to track
-  // -------------------
-  const colorOptions = [`red`, `magenta`, `cyan`, `yellow`];
-
-  // Setup the block tracker
-  // -----------------------
-  const blockTracker = new tracking.ColorTracker(colorOptions);
-  tracking.track(video, blockTracker, { camera: true });
-
-  // Start tracking blocks
-  // ---------------------
-  blockTracker.on(`track`, (event) => {
-    // Clear the canvas
-    // ----------------
-    canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
-
-    // Add rectanges where blocks are detected
-    // ---------------------------------------
-    event.data.forEach((rectange) => {
-      if (rectange.color === `custom`) {
-        rectange.color = blockTracker.customColor;
+  // Register a red square block
+  // ---------------------------
+  blockforge.register(`red-square-block`, {
+    name: `Square`,
+    size: {
+      width: {
+        'greater-than': 30,
+        'less-than'   : 60
+      },
+      height: {
+        'greater-than': 30,
+        'less-than'   : 60
       }
-      canvas.strokeStyle = rectange.color;
-      canvas.strokeRect(rectange.x, rectange.y, rectange.width, rectange.height);
-      canvas.font = `11px Helvetica`;
-      canvas.fillStyle = `#fff`;
-      canvas.fillText(`x: ` + rectange.x + `px`, rectange.x + rectange.width + 5, rectange.y + 11);
-      canvas.fillText(`y: ` + rectange.y + `px`, rectange.x + rectange.width + 5, rectange.y + 22);
-    });
+    },
+    drawColor: `red`,
+    color: {
+      red: {
+        'greater-than': 150
+      },
+      green: {
+        'less-than': 100
+      },
+      blue: {
+        'less-than': 100
+      }
+    }
   });
+
+  // Register a red rectangle block
+  // ---------------------------
+  blockforge.register(`red-rectangle-block`, {
+    name: `Rectangle`,
+    size: {
+      width: {
+        'greater-than': 60,
+        'less-than'   : 100
+      },
+      height: {
+        'greater-than': 30,
+        'less-than'   : 60
+      }
+    },
+    drawColor: `#f00`,
+    color: {
+      red: {
+        'greater-than': 150
+      },
+      green: {
+        'less-than': 100
+      },
+      blue: {
+        'less-than': 100
+      }
+    }
+  });
+
+  // Register a blue square block
+  // ---------------------------
+  blockforge.register(`blue-square-block`, {
+    name: `Square`,
+    size: {
+      width: {
+        'greater-than': 30,
+        'less-than'   : 60
+      },
+      height: {
+        'greater-than': 30,
+        'less-than'   : 60
+      }
+    },
+    drawColor: `#1e4aa3`,
+    color: {
+      red: {
+        'less-than'   : 100
+      },
+      green: {
+        'less-than'   : 160
+      },
+      blue: {
+        'greater-than': 130
+      }
+    }
+  });
+
+  // Register a blue rectangle block
+  // ---------------------------
+  blockforge.register(`blue-rectangle-block`, {
+    name: `Rectangle`,
+    size: {
+      width: {
+        'greater-than': 60,
+        'less-than'   : 100
+      },
+      height: {
+        'greater-than': 30,
+        'less-than'   : 60
+      }
+    },
+    drawColor: `#1e4aa3`,
+    color: {
+      red: {
+        'less-than'   : 100
+      },
+      green: {
+        'less-than'   : 190
+      },
+      blue: {
+        'greater-than': 130
+      }
+    }
+  });
+
+  // Register a green square block
+  // -----------------------------
+  blockforge.register(`green-square-block`, {
+    name: `Square`,
+    size: {
+      width: {
+        'greater-than': 30,
+        'less-than'   : 60
+      },
+      height: {
+        'greater-than': 30,
+        'less-than'   : 60
+      }
+    },
+    drawColor: `#11754b`,
+    color: {
+      red: {
+        'less-than': 100
+      },
+      green: {
+        'greater-than': 90
+      },
+      blue: {
+        'less-than'   : 100
+      }
+    }
+  });
+
+  // Register a green rectangle block
+  // ------------------------------
+  blockforge.register(`green-rectangle-block`, {
+    name: `Rectangle`,
+    size: {
+      width: {
+        'greater-than': 60,
+        'less-than'   : 100
+      },
+      height: {
+        'greater-than': 30,
+        'less-than'   : 60
+      }
+    },
+    drawColor: `#11754b`,
+    color: {
+      red: {
+        'less-than': 100
+      },
+      green: {
+        'greater-than': 90
+      },
+      blue: {
+        'less-than'   : 100
+      }
+    }
+  });
+
+  // Start watching blocks
+  // ---------------------
+  blockforge.watch();
+
+  // Set sizing variables
+  // --------------------
+  const topMargin = 90;
 
   // Resize elements to fit current window size
   // ------------------------------------------
@@ -73,5 +213,4 @@ app.controller(`blockforgeCamera`, [`$scope`, `constants`, function(){
 
   resizeElements();
   window.addEventListener(`resize`, resizeElements);
-  console.info(`Camera Controller Ready...`);
 }]);

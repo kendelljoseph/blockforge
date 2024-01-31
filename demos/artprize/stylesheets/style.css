@@ -16,7 +16,8 @@ demo-content {
   justify-content: flex-start;
   align-items: stretch;
   flex-flow: column;
-  flex: 1 1 auto; }
+  flex: 1 1 auto;
+  background: url(/artprize/images/block_floor.jpg); }
 
 demo-title {
   font-size: 1.7em;
@@ -25,14 +26,28 @@ demo-title {
 
 demo-bold-text {
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  font-size: 2.1em;
-  padding: 20px;
+  font-size: 1.1em;
+  padding: 10px;
   cursor: default;
-  background: #000;
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 20px -2px #000; }
+  background: rgba(68, 218, 195, 0.65);
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+  background: url(/media/images/lego_bg.jpeg); }
+
+demo-text-basic {
+  align-items: center;
+  justify-content: flex-start;
+  text-align: right;
+  font-size: 0.75em;
+  padding: 10px;
+  cursor: default;
+  background: rgba(68, 218, 195, 0.65);
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  font-family: Arial;
+  font-weight: bold; }
 
 demo-button-options {
   display: flex;
@@ -81,13 +96,16 @@ demo-button:hover {
   box-sizing: border-box; }
 
 #video {
-  opacity: 0;
-  top: -3000px;
-  left: -3000px; }
+  z-index: 999;
+  opacity: 1;
+  top: 90px;
+  left: 0;
+  background: #000; }
 
 #canvas {
-  border-top: 2px solid #000;
-  background: #333; }
+  z-index: 9999;
+  box-sizing: border-box;
+  background: transparent; }
 
 body {
   display: flex;

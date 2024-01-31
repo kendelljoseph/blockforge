@@ -12,7 +12,7 @@ demo-header {
   flex           : 0 1 100%;
   background     : $fallback-color;
   background     : linear-gradient(
-                      rgba(255, 255, 255, 0.7), 
+                      rgba(255, 255, 255, 0.7),
                       rgba(255, 255, 255, 0.7)
                     ),
                     url(/media/images/lego_bg.jpeg);
@@ -23,6 +23,7 @@ demo-content {
   align-items    : stretch;
   flex-flow      : column;
   flex           : 1 1 auto;
+   background: url(/artprize/images/block_floor.jpg);
 }
 
 demo-title {
@@ -33,14 +34,29 @@ demo-title {
 
 demo-bold-text {
   align-items    : center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align     : center;
-  font-size      : 2.1em;
-  padding        : 20px;
+  font-size      : 1.1em;
+  padding        : 10px;
   cursor         : default;
-  background     : $fallback-color;
-  background     : rgba(0, 0, 0, 0.20);
-  box-shadow     : 0 0 20px -2px #000;
+  background     : rgba(68, 218, 195, 0.65);
+  color          : #fff;
+  text-shadow    : 1px 1px 5px #000;
+  background: url(/media/images/lego_bg.jpeg);
+}
+
+demo-text-basic {
+  align-items    : center;
+  justify-content: flex-start;
+  text-align     : right;
+  font-size      : 0.75em;
+  padding        : 10px;
+  cursor         : default;
+  background     : rgba(68, 218, 195, 0.65);
+  color          : #fff;
+  text-shadow    : 1px 1px 2px #000;
+  font-family    : Arial;
+  font-weight    : bold;
 }
 
 demo-button-options {
